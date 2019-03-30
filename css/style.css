@@ -1,0 +1,35 @@
+/*<------- FORMULÁRIOS ------->*/
+
+/* Alterando cores dos inputs */
+.input-field input:focus + label {
+    color: #115B74 !important;
+  }
+
+.row .input-field input:focus {
+  border-bottom: 1px solid #115B74 !important;
+  box-shadow: 0 1px 0 0 #115B74 !important
+}
+
+/*<------- FOOTER FIXO NO FINAL DA PÁGINA ------->*/
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
+/*<------- QUERIES DA PÁGINA DE LOGIN ------->*/
+
+@media (min-width: 768px) { 
+  #slogin {
+    margin-top: 2%; /*FORM Ipad paisagem*/
+  }
+}
+
+
+

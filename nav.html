@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--Importando Ícone da Google Font-->
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Importando materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!--Importando CSS Personalizado-->
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    </head>
+
+    <body>
+           
+        <!--NAV BAR-->
+        
+        <nav class="grey darken-4">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo"> LOGO </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"> <i class="material-icons">menu</i> </a>
+
+                <ul class="right hide-on-med-and-down">
+                    <li class="#"><a href="index.php"> Início</a></li>
+                    <li><a href="#"> Sobre </a></li>
+                    <li><a href="#"> Quem Somos </a></li>
+                    <li><a href="#"> Contato </a></li>
+                    <li><a href="login.php" class="waves-effect waves-light btn orange darken-4">Entrar</a></li> <!--Botão entrar da navbar-->
+                </ul>
+                <ul id="mobile-demo" class="side-nav">
+                    <li class="active"><a href="index.php"> Início</a></li>
+                    <li><a href="#"> Sobre </a></li>
+                    <li><a href="#"> Quem Somos </a></li>
+                    <li><a href="#"> Contato </a></li>
+                    <li> <a href="login.php" class="waves-effect waves-light btn orange darken-4">Entrar</a></li>  <!--Botão entrar mobile-->
+                </ul>
+            </div>
+        </nav>
+
+        <!--Vinculando JavaScript no final da página para ganho de performance-->
+        <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+          
+        <script> 
+         $(".button-collapse").sideNav(); 
+        </script>
+    </body>
+</html>  
