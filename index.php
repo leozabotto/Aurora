@@ -12,7 +12,7 @@
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <style> body{ background-color: #6d4e7a; } </style>
+        <style> body{ background-color: #eceff1; } </style>
       
     </head>
 

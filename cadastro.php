@@ -14,12 +14,7 @@
 
     </head>
     <body>
-
-        <?php
-            session_start();
-            include 'nav.html' /*Include NavBar*/
-        ?>
-
+       
         <!--Saudação e Seção do formulário-->
 
         <div class="section">
@@ -125,9 +120,7 @@
          
         </div>
 
-        <?php
-            include 'footer.html' /*Include Footer*/
-        ?>
+       
 
 
         <!--Vinculando JavaScript no final da página para ganho de performance-->

@@ -26,6 +26,15 @@
                 <div class=" col s12 offset-s12">
                     <div class="row" id="slogin">
                         <div class="col s12 m8 offset-m2 center-align">
+                            <div class="row"> 
+                                <div class="col s2 offset-s2">
+                                  
+                                </div>  
+                                <div class="col s3">
+                                    <h4> </h4>
+                                </div>
+                            </div> 
+
                             <h5><strong> Bem-vindo(a)! </strong></h5> <br>
                             <h5> Insira seus dados para acessar o Aurora:</h5>
                             <h5>
