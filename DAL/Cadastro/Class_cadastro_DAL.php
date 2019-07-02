@@ -53,7 +53,7 @@
                         //testa se foram adicionados
                         if($resultado != "Registros adicionados com sucesso.")
                         {//7
-                            $resultado = "deu merda ao inserir dados de login";
+                            $resultado = "Houve algum problema ao inserir os dados.";
                         }//7
                         else
                         {//8
@@ -64,7 +64,7 @@
         }//2      
         else
         {
-            $resultado = "campo vazio";
+            $resultado = "Campo Vazio!";
         } 
         return $resultado;
     }//1

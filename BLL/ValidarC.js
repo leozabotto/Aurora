@@ -29,6 +29,11 @@ function ValidC(){
                 Retorno.innerText = "Campo confirmar senha vazio!";
                 return false;
             }
+            else if (ConSenha != Senha){
+                var Retorno = document.getElementById("Retorno");
+                Retorno.innerText = "As senhas não conferem!";
+                return false;
+            }
             var Sexo = document.getElementById("sexo").value;
             if(Sexo == ""){
                 var Retorno = document.getElementById("Retorno");

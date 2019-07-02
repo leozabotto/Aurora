@@ -1,3 +1,5 @@
+<!--Vinculando CSS para correta exibição do modal-->
+<link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen,projection"/>
 
 <?php
     //arquivo chamado no action do formulario de cadastro
@@ -26,14 +28,35 @@
     }
     elseif($result == "Usuário cadastrado com sucesso!")
     {    
-        //tudo deu certo loga
+        /*tudo deu certo loga
         $_SESSION['auxiliar'] = $result;
         echo $_SESSION['auxiliar'];
-        header("Location: ../../login.php");
+        header("Location: ../../login.php");*/
+
+        //tudo deu certo, abre modal alertando
+        echo('<div id="modal1" class="modal">
+                <div class="modal-content">
+                 <h4>Usuário cadastrado com sucesso!</h4>
+                 <p>Clique em "Ok" para logar!</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="../../login.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+                </div>
+            </div>');
     }
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
     
 
 
 ?>
+
+<!--Vinculando Scripts para correta exibição do modal-->
+<script type="text/javascript" src="../../js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="../../js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#modal1').modal();
+    $('#modal1').modal('open'); 
+  });
+</script>
 
