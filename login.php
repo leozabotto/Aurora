@@ -39,15 +39,6 @@
 
                             <h5><strong> Bem-vindo(a)! </strong></h5> <br>
                             <h5> Insira seus dados para acessar o Aurora:</h5>
-                            <h5>
-                                <?php
-                                    if (isset($_SESSION['auxiliar']))
-                                    {
-                                        echo $_SESSION['auxiliar'];
-                                        unset ($_SESSION['auxiliar']);							
-                                    }
-                                ?>
-                            </h5>
                         </div>
                     </div>
 
@@ -84,6 +75,15 @@
                     <div class="row center-align">
                         <div class="col s12">
                             <h6 class="red-text" id="Retorno"> </h6> 
+                            <h6 class="red-text">
+                                <?php
+                                    if (isset($_SESSION['auxiliar']))
+                                    {
+                                        echo $_SESSION['auxiliar'];
+                                        unset ($_SESSION['auxiliar']);							
+                                    }
+                                ?>
+                            </h6>
                         </div>
                     </div>
                  </form>   

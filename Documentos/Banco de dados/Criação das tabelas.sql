@@ -1,4 +1,3 @@
-drop database db_aurora;
 CREATE DATABASE DB_Aurora;
 
 USE DB_Aurora;

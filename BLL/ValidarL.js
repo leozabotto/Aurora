@@ -7,14 +7,14 @@ function ValidL(){
             if(Email == "")
             {
                 var Retorno = document.getElementById("Retorno");
-                Retorno.innerText = "Campo email vazio";
+                Retorno.innerText = "Campo Email vazio!";
                 return false;
             }
             //Testa se senha ta vazio
             else if(Senha == "")
             {
                 var Retorno = document.getElementById("Retorno");
-                Retorno.innerText = "Campo senha vazio";
+                Retorno.innerText = "Campo senha vazio!";
                 return false;
             }
             //Submita se tudo certo
