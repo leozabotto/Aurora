@@ -1,3 +1,4 @@
+//validação do cadastro
 function ValidC(){
             var Nome = document.getElementById("name").value;
             if(Nome == ""){
@@ -17,6 +18,18 @@ function ValidC(){
                 Retorno.innerText = "Campo usuário vazio!";
                 return false;
             }
+                        var Sexo = document.getElementById("sexo").value;
+            if(Sexo == ""){
+                var Retorno = document.getElementById("Retorno");
+                Retorno.innerText = "Campo sexo vazio!";
+                return false;
+            }
+            var DNasc = document.getElementById("nasc").value;
+            if(DNasc == ""){
+                var Retorno = document.getElementById("Retorno");
+                Retorno.innerText = "Campo data de nascimento vazio!";
+                return false;
+            }
             var Senha = document.getElementById("passuser").value;
             if(Senha == ""){
                 var Retorno = document.getElementById("Retorno");
@@ -32,18 +45,6 @@ function ValidC(){
             else if (ConSenha != Senha){
                 var Retorno = document.getElementById("Retorno");
                 Retorno.innerText = "As senhas não conferem!";
-                return false;
-            }
-            var Sexo = document.getElementById("sexo").value;
-            if(Sexo == ""){
-                var Retorno = document.getElementById("Retorno");
-                Retorno.innerText = "Campo sexo vazio!";
-                return false;
-            }
-            var DNasc = document.getElementById("nasc").value;
-            if(DNasc == ""){
-                var Retorno = document.getElementById("Retorno");
-                Retorno.innerText = "Campo data de nascimento vazio!";
                 return false;
             }
             document.cadastro.submit();

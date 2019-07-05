@@ -17,7 +17,7 @@
 	<body onload=Materialize.toast>
 
 			<?php	
-				include 'nav_home.html';
+                include 'nav_home.php';                
 			?>
 	
 			<main>	
@@ -27,7 +27,7 @@
 				    <div class="container">
                         <div class="row">
                             <div class="col s12">
-                                <h5 class="user_forum"> Olá, $User_Name! </h5>
+                                <h5 class="user_forum"> Olá, <?php echo $_SESSION['User_Name']; ?> </h5>
                                 <h6 class="user_forum"> Bem-vindo ao Fórum Aurora </h6>
                                 <div class="input-field col s12">
                                     <!--<i class="material-icons prefix">search</i>-->

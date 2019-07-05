@@ -10,7 +10,7 @@
             $senha =  $objeto['senha'];        
             
             //cria a querry
-            $sql = "SELECT TBU.usernick, TBU.pessoa FROM TB_Usuario AS TBU, TB_Pessoa AS TBP WHERE TBU.email = '$email' || TBU.usernick = '$email' && TBU.senha = '$senha' && TBU.pessoa = TBP.cod_pessoa LIMIT 1";
+            $sql = "SELECT TBU.usernick, TBU.pessoa, TBP.nome FROM TB_Usuario AS TBU, TB_Pessoa AS TBP WHERE TBU.email = '$email' || TBU.usernick = '$email' && TBU.senha = '$senha' && TBU.pessoa = TBP.cod_pessoa LIMIT 1";
             
             //chama função que vai conectar ao banco e executar a query
             $resultado = Func_executeselect_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
@@ -26,6 +26,7 @@
                 //se encontrar manda os dados
                 $_SESSION['pessoa'] = $resultado['pessoa'];
                 $objeto['usernick'] = $resultado['usernick'];
+                $objeto['nome'] = $resultado['nome'];
                 $objeto['auxiliar'] = "logar";           
             }
         }

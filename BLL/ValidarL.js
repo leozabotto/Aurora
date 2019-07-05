@@ -1,3 +1,4 @@
+//validação do login
 function ValidL(){
             //Pegando valores dos componentes
             var Email = document.getElementById("user").value;

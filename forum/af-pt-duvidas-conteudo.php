@@ -18,7 +18,7 @@
 	<body>
 
 			<?php	
-				include 'nav_home.html';
+				include 'nav_home.php';
 			?>
 	
 			<main>	
