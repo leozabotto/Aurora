@@ -10,7 +10,10 @@ $(function(){
 			}
 			$.post('Class_email_DAL.php', dados, function(retorna)
 			{				
-				alert(retorna);
+				if(retorna != "")
+				{
+					alert(retorna);
+				}
 			});
 		}
 	});

@@ -5,10 +5,10 @@ include_once 'conexao.php';
 $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
 //Pesquisar no banco de dados nome do usuario referente a palavra digitada
-$result_user = "SELECT * FROM TB_Usuario WHERE usuario LIKE '$usuarios'";
+$result_user = "SELECT * FROM TB_Usuario WHERE usernick LIKE '$usuarios'";
 $resultado_user = mysqli_query($conexao, $result_user);
 
 if(($resultado_user) AND ($resultado_user->num_rows != 0 ))
 {
-	echo "email em utilização";
+	echo "user em utilização";
 }

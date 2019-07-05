@@ -9,8 +9,11 @@ $(function(){
 				palavra : pesquisa
 			}
 			$.post('Class_usuario_DAL.php', dados, function(retorna)
-			{				
-				alert(retorna);
+			{
+				if(retorna != "")
+				{
+					alert(retorna);
+				}
 			});
 		}
 	});
