@@ -43,12 +43,12 @@
                 </div>
             </li>
 
-            <li><a href="../home.php" class="waves-effect"><i class="material-icons">home</i>Início</a></li>
-            <li><a href="#!" class="waves-effect"><i class="material-icons">collections_bookmark</i>Disciplinas</a></li>
-            <li><a href="#!" class="waves-effect"><i class="material-icons">create</i>Exercícios</a></li>
-            <li><a href="#!" class="waves-effect"><i class="material-icons">star</i>Favoritos</a></li>
-            <li><a href="forum-index.php" class="waves-effect"><i class="material-icons">question_answer</i>Fórum</a></li>
-            <li><a href="../perfil.php" class="waves-effect"><i class="material-icons">
+            <li><a href="../home.php" class="waves-effect"><i class="material-icons green-text">home</i>Início</a></li>
+            <li><a href="../disciplinas.php" class="waves-effect"><i class="material-icons purple-text">collections_bookmark</i>Disciplinas</a></li>
+            <li><a href="../exercicios.php" class="waves-effect"><i class="material-icons yellow-text">create</i>Exercícios</a></li>
+            <li><a href="#!" class="disabled"><i class="material-icons red-text">star</i>Favoritos</a></li>
+            <li><a href="forum-index.php" class="waves-effect"><i class="material-icons blue-text">question_answer</i>Fórum</a></li>
+            <li><a href="../perfil.php" class="waves-effect"><i class="material-icons brown-text">
         account_box</i>Meu Perfil</a></li>
             <li><a href="../index.php" class="waves-effect waves-light btn red">Sair</a></li>
         </ul>

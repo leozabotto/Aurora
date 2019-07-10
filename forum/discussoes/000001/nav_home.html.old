@@ -43,9 +43,9 @@
             </li>
 
             <li><a href="../../home.php" class="waves-effect"><i class="material-icons">home</i>Início</a></li>
-            <li><a href="#!" class="waves-effect"><i class="material-icons">collections_bookmark</i>Disciplinas</a></li>
-            <li><a href="#!" class="waves-effect"><i class="material-icons">create</i>Exercícios</a></li>
-            <li><a href="#!" class="waves-effect"><i class="material-icons">star</i>Favoritos</a></li>
+            <li><a href="../../disciplinas.php" class="waves-effect"><i class="material-icons">collections_bookmark</i>Disciplinas</a></li>
+            <li><a href="../../exercicios.php" class="waves-effect"><i class="material-icons">create</i>Exercícios</a></li>
+            <li><a href="#!" class="disabled"><i class="material-icons grey-text">star</i>Favoritos</a></li>
             <li><a href="forum-index.php" class="waves-effect"><i class="material-icons">question_answer</i>Fórum</a></li>
             <li><a href="../../perfil.php" class="waves-effect"><i class="material-icons">
         account_box</i>Meu Perfil</a></li>

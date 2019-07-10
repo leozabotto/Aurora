@@ -38,14 +38,33 @@ nav{
 .picker__close { color: #6d4e7a !important;}
 .picker__today { color: #6d4e7a !important;}
 
-
-
 main {
   flex: 1 0 auto;
 }
 
 .dropdown-content li > a, .dropdown-content li > span {
     color: #6d4e7a !important;
+}
+
+
+
+
+/*<------- EXERCÍCIOS ------->*/
+
+.tabs .tab a {
+  color: #6d4e7a;
+}
+
+.tabs .tab a:hover {
+  color:#6d4e7a;
+}
+
+.tabs .tab a:focus.active {
+  color:#6d4e7a;
+}
+
+.tabs .indicator {
+  background-color:#6d4e7a;
 }
 
 /*<------- AURORA FORUM ------->*/
