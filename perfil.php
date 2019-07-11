@@ -14,7 +14,7 @@
 		
     </head>
 	
-	<body class="grey lighten-3">
+	<body class="grey lighten-3" onload=Materialize.toast>
 
 			<?php	
 				include 'nav_home.php';
@@ -30,18 +30,18 @@
                     </div>
 
                     <div class="row center-align mt-5">
-                        <div class="col s12 m7">
-                            <a href="#"><img class="hoverable responsive-img user-img col s6 offset-s3" id="#" src="img/usericon.png"></a> <br>
+                        <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada de o usuário clicar sobre o link ou no botão e tem de ser recortada para 512x512 px-->
+                            <div class="col s6 offset-s3"><a href="#"><img class="hoverable responsive-img user-img" id="#" src="img/usericon.png"></a></div> <br>
                               <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li><!--Foto de Perfil do usuário-->
                         </div>
                         
-                        <div class="input-field col s12 m4 mt-5">
-                            <input id="name" type="text" placeholder="$nomedousuario" name="nome" class="validate"><!--Campo Nome-->
+                        <div class="input-field col s12 m4 mt-2">
+                            <input id="name" type="text" placeholder="$nomedousuario" name="nome" class="validate"><!--Campo Nome do Usuário-->
                             <label for="name"> Nome </label>
                         </div>
 
                         <div class="input-field col s12 m4">
-                            <input id="email" type="email" placeholder="$email" name="email" class="validate"> <!--Campo Nome-->
+                            <input id="email" type="email" placeholder="$email" name="email" class="validate"> <!--Campo email-->
                             <label for="email"> Email </label>
                             <span class="helper-text" data-error="" data-success=""></span>
                         </div>
@@ -69,15 +69,24 @@
                             &nbsp; 
                             <a href="#" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> </i> Cancelar </a></li>
                             
-                    </div>
+                        </div>
 
+                    </div>
                 </div>
 			</main>
 	
 		 
 	
 		 <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
-		 <script type="text/javascript" src="js/materialize.min.js"></script>
+         <script type="text/javascript" src="js/materialize.min.js"></script>
+         <script>
+             $(document).ready(function(){
+                $('.tooltipped').tooltip({delay: 50});
+            });
+
+            var $toastContent = $('<span><i class="small material-icons">error_outline</i> &nbsp; Clique na imagem para alterá-la!</span>');
+            Materialize.toast($toastContent, 10000);
+        </script>
 		 
 		
 	

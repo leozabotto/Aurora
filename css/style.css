@@ -19,6 +19,10 @@ nav{
   margin-top: 5%;
 }
 
+.mt-2 {
+  margin-top: 2%;
+}
+
 
 /*<------- FORMULÁRIOS ------->*/
 
@@ -82,7 +86,6 @@ main {
 }
 
 /*<------- PERFIL ------->*/
-
 
 
 /*<------- FIX PARA MATERIAL ICONS ------->*/

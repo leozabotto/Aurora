@@ -51,7 +51,7 @@
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
                             <input id="email" type="email" name="email" class="validate" required> <!--Campo Email-->
-                            <label for="emil"> Email </label>
+                            <label for="email"> Email </label>
                             <span class="helper-text" data-error="Insira um email válido" data-success=""></span>
                         </div>
                     </div>
