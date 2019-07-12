@@ -31,7 +31,8 @@
         //tudo deu certo loga
         $_SESSION['User_Name'] = $result['usernick'];
         $_SESSION['Nome_Completo'] = $result['nome'];
-        echo $_SESSION['User_Name'];
+        $_SESSION['Email'] = $pessoa['email'];
+        $_SESSION['Senha'] = $pessoa['senha'];
         header("Location: ../../home.php");
     }
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
