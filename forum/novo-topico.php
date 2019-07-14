@@ -11,6 +11,7 @@
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+        <!-- remover isso depois -->
         <style type="text/css">
 			.carregando{
 				color:#ff0000;
@@ -64,7 +65,7 @@
                                     <label>Disciplina</label>              
                                 </div>
 
-                                <span class="carregando">Aguarde, carregando...</span>
+                                <span class="carregando">Aguarde, carregando...</span><!-- remover isso depois -->
                                 <!-- mostra os conteudos referentes a disciplina selecionada, ou pelo menos e o que deveria fazer -->
                                 <div class="input-field col s12 m6 l6">
                                     <select id="id_conteudo" name="conteudo" required> <!--Campo do Conteúdo se Disciplina for PORTUGUÊS, só pode aparecer se a disciplina for selecionada--> 
@@ -108,20 +109,30 @@
 		<script type="text/javascript">google.load("jquery", "1.4.2");</script>
 		
 		<script type="text/javascript">
-		$(function(){
-			$('#id_disciplina').change(function(){
-				if( $(this).val() ) {
-					$('#id_conteudo').hide();
-					$('.carregando').show();
-				        $.getJSON('../DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j){
-						var options = ' <optgroup label="Selecione:">';	
-						for (var i = 0; i < j.length; i++) {
-							options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
-						}	
-						$('#id_conteudo').html(options).show();
-						$('.carregando').hide();
-					});
-				} else {
+        $(function()
+        {   //quando selecionar a disciplina
+            $('#id_disciplina').change(function()
+            {
+                if( $(this).val()) 
+                {   //oculta o campo conteudo
+                    $('#id_conteudo').hide();
+                    //mostra mensagem de carregando (remover isso depois) 
+                    $('.carregando').show();
+                        //chama o arquivo e executa o select que tambem tranfere os dados para uma variavel js
+                        $.getJSON('../DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j)
+                        {   //inicia o for que mostra os conteudos
+                            var options = ' <optgroup label="Selecione:">';	
+                            for (var i = 0; i < j.length; i++) 
+                            {
+							    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+						    }//mostra os dados na tela	
+                            $('#id_conteudo').html(options).show();
+                            //esconde a mensagem de carregando (remover isso depois)
+                            $('.carregando').hide();
+					    });
+                } 
+                else 
+                {   //se nao funcionar nao faz nada
 					$('#id_conteudo').html('<option value="">– Escolha Conteudo –</option>');
 				}
 			});
