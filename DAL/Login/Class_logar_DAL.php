@@ -29,10 +29,12 @@
     elseif($result['auxiliar'] == "logar")
     {    
         //tudo deu certo loga
+        //Se precisar colocar mais alguns campos no perfil(alterar), colocar aqui (sid)
         $_SESSION['User_Name'] = $result['usernick'];
         $_SESSION['Nome_Completo'] = $result['nome'];
         $_SESSION['Email'] = $pessoa['email'];
         $_SESSION['Senha'] = $pessoa['senha'];
+        echo $_SESSION['User_Name'];
         header("Location: ../../home.php");
     }
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
