@@ -11,7 +11,13 @@
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-        	
+        <style type="text/css">
+			.carregando{
+				color:#ff0000;
+				display:none;
+			}
+		</style>
+        
     </head>
 	
 	<body>
@@ -49,7 +55,7 @@
                                 </div>  
 
                                 <div class="input-field col s12 m6 l6">
-                                    <select id="#" name="disciplina" required> <!--Campo da disciplina correspondente--> 
+                                    <select id="id_disciplina" name="disciplina" required> <!--Campo da disciplina correspondente--> 
                                         <optgroup label="Selecione:">            
                                             <!-- pega as materias no banco e coloca na caixa de seleção -->
                                             <?php include "../DAL/Forum/Class_disciplina_DAL.php"; ?>
@@ -57,8 +63,16 @@
                                     </select>  
                                     <label>Disciplina</label>              
                                 </div>
+
+                                <span class="carregando">Aguarde, carregando...</span>
                                 <!-- mosta os conteudos referentes a disciplina selecionada, ou pelo menos e o que deveria fazer -->
-                                <?php include "../DAL/Forum/Class_conteudo_DAL.php"; ?>
+                                <div class="input-field col s12 m6 l6">
+                                    <select id="id_conteudo" name="conteudo" required> <!--Campo do Conteúdo se Disciplina for PORTUGUÊS, só pode aparecer se a disciplina for selecionada--> 
+                                         
+                                    </select>  
+                                    <label>conteudo</label>    
+                                </div>
+
                             </div>
 
                             <div class="row">
@@ -90,7 +104,29 @@
 				</section>
             </main>
         
-	
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">google.load("jquery", "1.4.2");</script>
+		
+		<script type="text/javascript">
+		$(function(){
+			$('#id_disciplina').change(function(){
+				if( $(this).val() ) {
+					$('#id_conteudo').hide();
+					$('.carregando').show();
+				        $.getJSON('../DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j){
+						var options = ' <optgroup label="Selecione:">S';	
+						for (var i = 0; i < j.length; i++) {
+							options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+						}	
+						$('#id_conteudo').html(options).show();
+						$('.carregando').hide();
+					});
+				} else {
+					$('#id_conteudo').html('<option value="">– Escolha Conteudo –</option>');
+				}
+			});
+		});
+		</script>
 		 
 	
 		 <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>

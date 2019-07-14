@@ -49,7 +49,7 @@
                             <span class="helper-text" data-error="Insira seu nome" data-success=""></span>
                         </div>
                     </div>
-                </div>
+                </div>              
 
                 <div class="row">
                     <div class="col s12 m12">
@@ -59,7 +59,7 @@
                             <span class="helper-text" data-error="Insira um email válido" data-success=""></span>
                         </div>
                     </div>
-                </div>                
+                </div>
 
                 <div class="row">
                     <div class="col s12 m12">
@@ -120,10 +120,10 @@
                 </div>
 
                 <div class="row center-align">
-                        <div class="col s12">
-                            <h6 class="red-text" id="Retorno"> </h6> 
-                        </div>
+                    <div class="col s12">
+                        <h6 class="red-text" id="Retorno"> </h6> 
                     </div>
+                </div>
             </form>
                 
             <div class="row">

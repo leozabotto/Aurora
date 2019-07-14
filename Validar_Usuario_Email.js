@@ -15,14 +15,8 @@ $(function(){
 			{
 				if(retorna != "")
 				{
-					var Retorno = document.getElementById("Retorno");
-                	Retorno.innerText = retorna;
-				}
-				else
-				{
-					var Retorno = document.getElementById("Retorno");
-					Retorno.innerText = "";
-				}				
+					alert(retorna);
+				}			
 			});
 		}
 	});
@@ -42,14 +36,9 @@ $(function(){
 			{				
 				if(retorna != "")
 				{
-					var Retorno = document.getElementById("Retorno");
-                	Retorno.innerText = retorna;
+					alert(retorna);
 				}
-				else
-				{
-					var Retorno = document.getElementById("Retorno");
-					Retorno.innerText = "";
-				}				
+				
 			});
 		}
 	});

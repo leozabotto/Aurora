@@ -5,12 +5,11 @@
     $dados = mysqli_query($conexao, $sql);
     // transforma os dados em um array
     $linha = mysqli_fetch_assoc($dados);
-    // calcula quantos dados retornaram
-    $total = mysqli_num_rows($dados);
     do
     {
-?>
-    <option value="<?php echo $linha["cod_materia"]; ?>"> <?php echo $linha["Nome"]; ?> </option>
-<?php
+
+        echo'<option value="'.$linha["cod_materia"].'">'.$linha["Nome"].'</option>';
+
     }while($linha = mysqli_fetch_assoc($dados));// finaliza o loop que vai mostrar os dados                                             
-?>
+   
+    Func_fechaconexao_DAL($conexao);
