@@ -8,6 +8,7 @@ function FunEdit(){
     btnsalvar.classList.remove("hide");
     var btncancel = document.getElementById('btnCancelar');
     btncancel.classList.remove("hide");
+    document.getElementById('emailant').value = document.getElementById('email').value;
 
     document.getElementById('name').disabled = 0;
     document.getElementById('email').disabled = 0;

@@ -63,6 +63,24 @@
         //função fecha a conexao com o banco
         Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
     }
+
+    //esta funçao executa uma query de insert
+    function Func_executeupdate_DAL($query)
+    {
+        $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+        if ( mysqli_query ( $conexao, $query )) 
+		{
+			$resultado = "Registros atualizados com sucesso.";
+		} 
+		else
+		{
+			$resultado = "ERRO: Não foi possível capaz de executar $query." . mysqli_error ( $conexao );
+        }
+        return $resultado;//retorna para o aquivo que chamo 
+
+        //função fecha a conexao com o banco
+        Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
+    }
     //esta função fecha a conexo
     function Func_fechaconexao_DAL($conexao)
     {
