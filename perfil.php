@@ -11,6 +11,10 @@
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
         <!--Importando arquivo JS para algumas funções -->
+        <script src="BLL/AlterarP.js"></script>
+        <!--Importando arquivo de alterar Usuário-->
+        <script src="BLL/Editar.js"></script>
+        <!--Importando arquivo do botão-->
 		
     </head>
 	
@@ -28,7 +32,7 @@
                             <h5> Meu Perfil </h5>
                         </div>
                     </div>
-
+                    <form name="Alt" method = "POST" action = "DAL/Perfil/Class_alterarU_DAL.php">
                     <div class="row center-align mt-5">
                         <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
                             <div class="col s6 offset-s3"><a href="#"><img class="hoverable responsive-img user-img" id="img_perfil" src="img/usericon.png"></a></div> <br>
@@ -50,7 +54,9 @@
                             <input id="passuser" type="password" name="senha" class="validate" required value="<?php echo $_SESSION['Senha']; ?>" disabled>
                             <label for="passuser"> Senha </label> <!--Campo Senha-->
                         </div>
+                        <input id="emailant" type="hidden" name="emailant">
                     </div>
+                    </form>
 
                     <div class="row center-align">
                         <div class="col s12 m12">
@@ -64,12 +70,26 @@
 
                                 -->
 
-                            <button id="btnSalvar" class="waves-effect waves-light btn orange darken-2 hide" disabled> <i class="white-text material-icons" >  save </i> Salvar </li> </button>
+                            <button id="btnSalvar" class="waves-effect waves-light btn orange darken-2 hide" disabled onclick ="FunAlt()"> <i class="white-text material-icons" >  save </i> Salvar </li> </button>
 
                             <button id="btnCancelar" class="waves-effect waves-light btn orange darken-2 hide"  disabled onclick ="FunCan()"> <i class="white-text material-icons"> </i> Cancelar </li> </button>
                             
                         </div>
-
+                    </div>
+                    <div class="row center-align">
+                        <div class="col s12">
+                            <h6 class="red-text" id="Retorno"> </h6> 
+                            
+                            <h6 class="red-text">
+                                <?php
+                                    if (isset($_SESSION['auxiliar']))
+                                    {
+                                        echo $_SESSION['auxiliar'];
+                                        unset ($_SESSION['auxiliar']);							
+                                    }
+                                ?>
+                            </h6>
+                        </div>
                     </div>
                 </div>
 			</main>
