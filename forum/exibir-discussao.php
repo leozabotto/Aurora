@@ -66,7 +66,7 @@
                                     <div class="col s6">
                                         <div class="row mt-5">
                                             <h5><?php echo $linha['usernick']; ?> </h5>
-                                            <h6><?php echo $linha['datap']; ?> &nbsp <a class="dropdown-button" href="#" data-activates="dropdown"><i class="material-icons black-text">more_vert</i></a> </h6> <!-- DROPDOWN PARA OPÇÕES DA RESPOSTA -->
+                                            <h6><?php echo $linha['datap']; ?> &nbsp </h6> <a href="" class="waves-effect waves-light btn-small">Editar</a> | <a href="" class="waves-effect waves-light btn-small">Verificar</a> 
                                             <h6><?php echo $linha['tipo']; ?>  </h6> <!--Se é aluno ou tutor-->
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                                                 <div class="col s6">
                                                     <div class="row mt-5">
                                                         <h5>'.$linha['usernick'].'</h5>
-                                                        <h6>'.$linha['datap'].'&nbsp <a class="dropdown-button" href="#" data-activates="dropdown"><i class="material-icons black-text">more_vert</i></a> </h6> <!-- DROPDOWN PARA OPÇÕES DA RESPOSTA -->
+                                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="" class="waves-effect waves-light btn-small">Editar</a> | <a href="" class="waves-effect waves-light btn-small">Verificar</a> 
                                                         <h6>'.$linha['tipo'].' </h6> <!--Se é aluno ou tutor-->
                                                     </div>
                                                 </div>

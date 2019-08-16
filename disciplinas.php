@@ -31,7 +31,7 @@
                         </div>  
                     </div>                  
             
-                    <div id="pt" class="row center-align">
+                    <div id="pt" class="row">
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
@@ -51,8 +51,17 @@
                                 </div>
                     
                                 <div class="card-reveal">
-                                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                                      <p>Aqui vão os links para os conteúdos relacionados.</p>
+                                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                                    <p> Movimentos Literários </p>
+                                    <ul class="left"> 
+                                        <li><a href="conteudos/port/lit/classicismo.php">Classicismo</a></li>
+                                        <li><a href="conteudos/port/lit/naturalismo.php">Naturalismo</a></li>
+                                        <li><a href="conteudos/port/lit/pre-modernismo.php">Pré-Modernismo</a></li>
+                                        <li><a href="conteudos/port/lit/realismo.php">Realismo</a></li>
+                                        <li><a href="conteudos/port/lit/realismo.php">Romantismo</a></li>
+                                        <li><a href="conteudos/port/lit/realismo.php">Simbolismo</a></li>
+                                    </ul>
+                                     
                                 </div>
                             </div>
                         </div>

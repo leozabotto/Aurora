@@ -54,7 +54,7 @@ if(!isset($_SESSION['pessoa']) && !isset($_SESSION['User_Name']) && !isset($_SES
             <li><a href="home.php" class="waves-effect"><i class="material-icons black-text">home</i>Início</a></li>
             <li><a href="disciplinas.php" class="waves-effect"><i class="material-icons black-text">collections_bookmark</i>Disciplinas</a></li>
             <li><a href="exercicios.php" class="waves-effect"><i class="material-icons black-text">create</i>Exercícios</a></li>
-            <li><a href="#!" class="disabled"><i class="material-icons black-text">star</i>Favoritos</a></li>
+            <!--<li><a href="#!" class="disabled"><i class="material-icons black-text">star</i>Favoritos</a></li>-->
             <li><a href="forum/forum-index.php" class="waves-effect"><i class="material-icons black-text">question_answer</i>Fórum</a></li>
             <li><a href="perfil.php" class="waves-effect"><i class="material-icons black-text">
         account_box</i>Meu Perfil</a></li>
