@@ -27,25 +27,7 @@
 
         <div class="carousel carousel-slider">
             <a class="carousel-item" href="#one!"><img src="img/BannerLogo2.png"></a>
-        </div>
-            
-   
-        <?php
-            include 'footer.html'
-        ?>
-        
-    
-  
-              
-
-            
-           
-            
-                        
-
-            
-
-                  
+        </div> 
        
 
         <!--Vinculando JavaScript no final da página para ganho de performance-->
@@ -53,12 +35,10 @@
         <script type="text/javascript" src="js/materialize.min.js"></script>
         
         <script> 
-             $(".button-collapse").sideNav(); 
-             $('.carousel.carousel-slider').carousel({fullWidth: true});
+           $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+            });
         </script>        
-       
-
-      
    
     </body>
 </html>

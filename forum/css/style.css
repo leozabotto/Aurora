@@ -11,10 +11,12 @@
 }
 
 .picker__date-display { background-color:  #6d4e7a; } /*#6d4e7a*/
-.picker__day.picker__day--today { color: red; }
+.picker__day.picker__day--today { color: #6d4e7a; }
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { background-color: #121855;}
 .picker__close { color: #6d4e7a !important;}
 .picker__today { color: #6d4e7a !important;}
+
+
 
 main {
   flex: 1 0 auto;

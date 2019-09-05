@@ -139,29 +139,23 @@
         <!--Ativando recursos via jQuery-->
         <script> 
 
-            $(".button-collapse").sideNav(); 
-
-            $(document).ready(function() {
-                $('select').material_select();
+            $(document).ready(function(){
+                $('.datepicker').datepicker({
+                    format: 'dd / mm / yyyy',
+                    i18n: {
+                        months: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                        cancel: 'Cancelar',
+                        done: 'Pronto',
+                        weekdaysAbbrev:	['DOM','SEG','TER','QUA','QUI','SEX','SAB'],
+                    },
+                    maxDate: new Date(),
+                    yearRange: [1930,2019],
+                    
+                });
             });
-             
-            $('.datepicker').pickadate({
-                monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-                monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-                weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
-                weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-                today: 'Hoje',
-                clear: 'Limpar',
-                close: 'Pronto',
-                labelMonthNext: 'Próximo mês',
-                labelMonthPrev: 'Mês anterior',
-                labelMonthSelect: 'Selecione um mês',
-                labelYearSelect: 'Selecione um ano',
-                selectMonths: true,
-                selectMonths: true, 
-                selectYears: 80, 
-                max: true,
-            });
+            
+            M.AutoInit();
+        
             //validação user
             $(function(){
                 $("#user").blur(function(){

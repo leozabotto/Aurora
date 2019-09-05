@@ -1,29 +1,3 @@
-/*NAV
-nav{
-  background-color: #6d4e7a !important;
-}
-
-.nav-wrapper{
-  background-color: #6d4e7a!important;
-}
-
-/FOOTER/
-
-.page-footer{
-  background-color: #6d4e7a !important;
-}  */
-
-/*GERAL*/
-
-.mt-5 {
-  margin-top: 5%;
-}
-
-.mt-2 {
-  margin-top: 2%;
-}
-
-
 /*<------- FORMULÁRIOS ------->*/
 
 /* Alterando cores dos inputs */
@@ -36,11 +10,7 @@ nav{
   box-shadow: 0 1px 0 0 #6d4e7a!important
 }
 
-.picker__date-display { background-color:  #6d4e7a; } /*#6d4e7a*/
-.picker__day.picker__day--today { color: red; }
-.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { background-color: #121855;}
-.picker__close { color: #6d4e7a !important;}
-.picker__today { color: #6d4e7a !important;}
+
 
 main {
   flex: 1 0 auto;
@@ -48,27 +18,6 @@ main {
 
 .dropdown-content li > a, .dropdown-content li > span {
     color: #6d4e7a !important;
-}
-
-
-
-
-/*<------- EXERCÍCIOS ------->*/
-
-.tabs .tab a {
-  color: #6d4e7a;
-}
-
-.tabs .tab a:hover {
-  color:#6d4e7a;
-}
-
-.tabs .tab a:focus.active {
-  color:#6d4e7a;
-}
-
-.tabs .indicator {
-  background-color:#6d4e7a;
 }
 
 /*<------- AURORA FORUM ------->*/
@@ -85,22 +34,13 @@ main {
   margin-top: 5%;
 }
 
-/*<------- PERFIL ------->*/
-
-
 /*<------- FIX PARA MATERIAL ICONS ------->*/
 
 .material-icons, .icon-text {
   vertical-align: middle;
 }
 
-/*<------- QUERIES DA PÁGINA DE LOGIN ------->*/
 
-@media (min-width: 768px) { 
-  #slogin {
-    margin-top: 2%; /*FORM Ipad paisagem*/
-  }
-}
 
 
 

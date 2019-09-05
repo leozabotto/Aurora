@@ -21,7 +21,7 @@
 	
 			<main>	
 
-				<section id="conteudo">
+			
                 <div class="row center-align mt-5">
                     <div class="col s12">
                         <h5> Bem-vindo ao Aurora, $Nome_Usuário! </h5>
@@ -29,7 +29,7 @@
                         <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="responsive-img user-img preview-img" id="img_perfil" src="img/usericon.png"></label></div> <br>
                     </div>
                 <div>
-				</section>
+				
 			</main>
 		 
 		

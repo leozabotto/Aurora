@@ -92,7 +92,7 @@
             $(document).ready(function(){
                 $('ul.tabs').tabs({
             });
-  });
+         });
 
         </script>
 		 

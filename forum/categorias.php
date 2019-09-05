@@ -51,8 +51,6 @@
                                 </thead>
                               
                                     
-                                
-
                                 <tbody>
                                     <tr>
                                         <td> <a class="" href="conteudos.php?disc=<?php echo $disc; ?>&tipo=Dúvidas"> &nbsp; Dúvidas </a></td> 
