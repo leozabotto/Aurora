@@ -28,20 +28,20 @@
 	
 		<main>	
             <div class="container">
-                <div class="row center-align mt-5">
+                <div class="row center-align mt-2">
                     <div class="col s12">
                         <h5> Meu Perfil </h5>
                     </div>
                 </div>
                 
                 <form name="Alt" method = "POST" action = "DAL/Perfil/Class_alterarU_DAL.php">
-                    <div class="row center-align mt-5">
+                    <div class="row center-align">
                         <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
                             <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="hoverable responsive-img user-img preview-img" id="img_perfil" src="img/usericon.png"></label><input class="file-chooser" type="file" id="Uimg" name="Uimg" accept="image/png, image/jpeg" hidden disabled></a></div> <br>
                              <!-- <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li> Foto de Perfil do usuário-->
                         </div>
                         
-                        <div class="input-field col s12 m4 mt-2">
+                        <div class="input-field col s12 m4">
                             <input id="name" type="text" name="nome" class="validate" input name="texto" type="text" size="10" maxlength="100" value ="<?php echo $_SESSION['Nome_Completo']; ?>" disabled><!--Campo Nome do Usuário-->
                             <label for="name"> Nome </label>
                         </div>

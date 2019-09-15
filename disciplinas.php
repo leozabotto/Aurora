@@ -22,86 +22,77 @@
 			<main>	
 
                 <div class="container"> 
-                    <div class="row mt-5">
+                    <div class="row center-align mt-2">
+                        <div class="col s12">
+                            <h4> Conteúdos </h4>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
                         <div class="col s12">
                             <ul id="#" class="tabs grey lighten-5">
-                                <li class="tab col s3"><a class="active" href="#pt">Português</a></li>
-                                <li class="tab col s3"><a href="#mat">Matemática</a></li>
+                                <li class="tab col s3"><a class="active" href="#geral">Geral</a></li>
+                                <li class="tab col s3"><a href="#humanas">Humanas</a></li>
+                                <li class="tab col s3"><a href="#exatas">Exatas</a></li>
+                                <li class="tab col s3"><a href="#tecnicas">Técnicas</a></li>
                             </ul>
                         </div>  
                     </div>                  
             
-                    <div id="pt" class="row">
+                    <div id="geral" class="row"> <!--  Todas as gerais ficam dentro dessa row-->
+
+                        <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
                                     <img class="activator" src="img/cards/pt/gramatica.png">
                                 </div>
-                    
-                                <div class="card-reveal">
-                                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                                      <p>Aqui vão os links para os conteúdos relacionados.</p>
-                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div id="humanas" class="row"> <!--  Todas as humanas ficam dentro dessa row-->
+
+                        <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
                                     <img class="activator" src="img/cards/pt/literatura.png">
                                 </div>
-                    
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                                    <p> Movimentos Literários </p>
-                                    <ul class="left"> 
-                                        <li><a href="conteudos/port/lit/classicismo.php">Classicismo</a></li>
-                                        <li><a href="conteudos/port/lit/naturalismo.php">Naturalismo</a></li>
-                                        <li><a href="conteudos/port/lit/pre-modernismo.php">Pré-Modernismo</a></li>
-                                        <li><a href="conteudos/port/lit/realismo.php">Realismo</a></li>
-                                        <li><a href="conteudos/port/lit/realismo.php">Romantismo</a></li>
-                                        <li><a href="conteudos/port/lit/realismo.php">Simbolismo</a></li>
-                                    </ul>
-                                     
-                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div id="mat" class="row center-align">
-                        <div class="col s12 m6 l6">
-                            <div class="card hoverable">
-                                <div class="card-image card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="img/cards/mat/matriz.png">
-                                </div>
-                    
-                                <div class="card-reveal">
-                                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                                      <p>Aqui vão os links para os conteúdos relacionados.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="exatas" class="row"> <!--  Todas as exatas ficam dentro dessa row-->
+
+                        <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
                                     <img class="activator" src="img/cards/mat/funcao.png">
                                 </div>
-                    
-                                <div class="card-reveal">
-                                     <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                                      <p>Aqui vão os links para os conteúdos relacionados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tecnicas" class="row"> <!--  Todas as exatas ficam dentro dessa row-->
+
+                    <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="img/cards/mat/matriz.png">
                                 </div>
                             </div>
                         </div>
                     </div>
-				
+                    
 			</main>
 
          
         <script>
-            $(document).ready(function(){
-                $('ul.tabs').tabs({
-                });
-             });
+           $(document).ready(function(){
+               $('.tabs').tabs();
+           })
         </script>
 		 
 		

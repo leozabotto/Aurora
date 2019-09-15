@@ -11,12 +11,36 @@
 }
 
 .mt-5 {
-  margin-top: 200px!important;
+  margin-top: 10%!important;
+}
+
+.mt-2 {
+  margin-top: 5%;
 }
 
 main {
   flex: 1 0 auto;
 }
+
+.tabs .tab a{
+  color: #6d4e7a;
+}
+
+.tabs .tab a:hover{
+  background-color: rgba(109, 78, 122, 0.1);
+  color: #6d4e7a;
+}
+
+.tabs .tab a.active {
+  background-color: #FAFAFA;
+  color: #6d4e7a;
+}
+
+.tabs .indicator {
+  background-color: #6d4e7a;
+}
+
+
 
 .dropdown-content li > a, .dropdown-content li > span {
     color: #6d4e7a !important;
