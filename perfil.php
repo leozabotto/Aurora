@@ -34,12 +34,28 @@
                     </div>
                 </div>
                 
-                <form name="Alt" method = "POST" action = "DAL/Perfil/Class_alterarU_DAL.php">
+                <form name="Alt" method = "POST" action = "DAL/Perfil/Class_inserirUfoto.php">
                     <div class="row center-align">
                         <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
                             <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="hoverable responsive-img user-img preview-img" id="img_perfil" src="img/usericon.png"></label><input class="file-chooser" type="file" id="Uimg" name="Uimg" accept="image/png, image/jpeg" hidden disabled></a></div> <br>
                              <!-- <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li> Foto de Perfil do usuário-->
                         </div>
+                        <?php
+                        Function InserirUfoto()
+                        {
+                            //Salvando img
+                            if(isset($_FILES["Uimg"]))
+                            {
+                                $UimgExt = strtolower(substr($_FILES['Uimg']['name'],-4));//Pega o nome da extesão
+                                $UimgNNo = $_SESSION['User_Name'] . $UimgExt; //Nomeia o arquivo
+                                $UimgPasta = "../../uploads/img_Uperf"; //Defini o nome da pasta em que o arquivo será salvo
+                                            
+                                move_uploaded_file($_FILES['Uimg']['tmp_name'], $UimgPasta.$UimgNNo);//efetua o upload
+                    
+                                $_SESSION['UimgNNo'] = $UimgNNo; //Amazena o novo nome na sessão
+                            }
+                        }
+                        ?>
                         
                         <div class="input-field col s12 m4">
                             <input id="name" type="text" name="nome" class="validate" input name="texto" type="text" maxlength="100" value ="<?php echo $_SESSION['Nome_Completo']; ?>" disabled><!--Campo Nome do Usuário-->
