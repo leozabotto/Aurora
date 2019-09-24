@@ -38,7 +38,7 @@
                 <form name="UFoto" method = "POST" action = "DAL/Perfil/Class_inserirUfoto.php" enctype="multipart/form-data">
                     <div class="row center-align">
                         <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
-                            <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="hoverable responsive-img user-img preview-img" id="img_perfil" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"></label><input class="file-chooser" type="file" id="Uimg" name="Uimg" accept="image/png, image/jpeg" hidden disabled></a></div> <br>
+                            <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="hoverable responsive-img user-img preview-img" id="img_perfil" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else if(!empty($_SESSION['ImgRed'])){echo $_SESSION['ImgRed'];}else{echo "img/usericon.png";}?>"></label><input class="file-chooser" type="file" id="Uimg" name="Uimg" accept="image/png, image/jpeg" hidden disabled></a></div> <br>
                              <!-- <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li> Foto de Perfil do usuário-->
                         </div>
                 </form>
@@ -137,8 +137,40 @@
 
         <script src="BLL/Editar.js"></script>	
 
+        <script>
+            $.ajax({
+                // A propriedade `url` é local, arquivo, script, alvo de sua requisição.
+                url: "DAL/Perfil/Class_inserirUfoto.php",
+
+                // A propriedade `type` é o verbo HTTP (GET, POST, HEAD, etc...)
+                type: "POST",
+
+                // A propriedade `data` são os dados de sua aplicação.
+                data: "Redimensionar()",
+
+                // A propriedade `dataType` refere-se ao tipo de dado que o servidor deve retornar a requisição.
+                dataType: "html"
+            });
+
+            // O método `done()` recebe uma função de callback
+            // que será executada caso a requisição tenha sucesso.
+            request.done(function(resposta) {
+                console.log(resposta)
+            });
+
+            // O método `fail()`recebe uma função de callback
+            // que será executada caso a requisição falhe.
+            request.fail(function(jqXHR, textStatus) {
+                console.log("Request failed: " + textStatus);
+            });
+
+            // O método `always()` recebe uma função de callback
+            // que será executada quando a requisição de sucesso estiver completa.
+            request.always(function() {
+            console.log("completou");
+            });
+        </script>    
         
-    
 	</body>
 </html>
 
