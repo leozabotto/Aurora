@@ -75,73 +75,10 @@
     endswitch;
 
 
-    $_SESSION['UimgNNo'] = $UimgNNo; //Amazena o novo nome na sessão
+    $_SESSION['UserImg'] = $UimgNNo; //Amazena o novo nome na sessão
 
     $_SESSION['auxiliar'] = "Sucesso ao alterar seus dados"; 
 
     header("Location: ../../perfil.php");
     
-    function Redimensionar()
-    {
-        switch($_FILES['Uimg']['type']):
-            case 'image/jpeg';
-            case 'image/pjpeg':
-
-                //Definindo dimensões desejadas
-                $AltuD = "512";
-                $LargD = "512";
-    
-                //Criando imagem temporária
-                $ImgTemp = imagecreatefromjpeg($_FILES['Uimg']['tmp_name']);
-    
-                //Pegando dimensões originais
-                $LargO = imagesx($ImgTemp);
-                $AltuO = imagesy($ImgTemp);
-    
-                //Criando novas dimensões
-                $NLarg = $LargD ? $LargD : floor (($LargO / $AltuO) * $LargD);
-                $NAltu = $AltuD ? $AltuD : floor (($AltuO / $LargO) * $AltuD);
-    
-                //Criando a nova imagem
-                $ImgRed = imagecreatetruecolor($NLarg,$NAltu);
-                imagecopyresampled($ImgRed, $ImgTemp, 0, 0 ,0 ,0, $NLarg,$NAltu,$LargO,$AltuO);
-
-                $_SESSION['ImgRed'] = $ImgRed;
-
-                $_SESSION['UserImg'] = "";
-                
-                echo $_SESSION['ImgRed'];
-
-            break;
-            case 'image/png';
-            case 'image/x-png':
-    
-                //Definindo dimensões desejadas
-                $AltuD = "512";
-                $LargD = "512";
-    
-                //Criando imagem temporária
-                $ImgTemp = imagecreatefrompng($_FILES['Uimg']['tmp_name']);
-    
-                //Pegando dimensões originais
-                $LargO = imagesx($ImgTemp);
-                $AltuO = imagesy($ImgTemp);
-    
-                //Criando novas dimensões
-                $NLarg = $LargD ? $LargD : floor (($LargO / $AltuO) * $LargD);
-                $NAltu = $AltuD ? $AltuD : floor (($AltuO / $LargO) * $AltuD);
-    
-                //Criando a nova imagem
-                $ImgRed = imagecreatetruecolor($NLarg,$NAltu);
-                imagecopyresampled($ImgRed, $ImgTemp, 0, 0 ,0 ,0, $NLarg,$NAltu,$LargO,$AltuO);
-
-                $_SESSION['ImgRed'] = $ImgRed;
-
-                $_SESSION['UserImg'] = "";
-                
-                echo $_SESSION['ImgRed'];
-            break;
-        
-        endswitch;
-    }
 ?>

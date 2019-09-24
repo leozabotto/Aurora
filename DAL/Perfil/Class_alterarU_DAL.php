@@ -11,7 +11,7 @@ $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
 $email = mysqli_real_escape_string($conexao, $_POST['email']);
 $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 $emailant = mysqli_real_escape_string($conexao, $_POST['emailant']);
-$UimgNNo = mysqli_real_escape_string($conexao, $_SESSION['UimgNNo']);
+$UimgNNo = mysqli_real_escape_string($conexao, $_SESSION['UserImg']);
 
  //cria a querry aleterar os dados da pessoa
  $sql2 = "UPDATE TB_pessoa AS P, TB_usuario AS U SET P.Nome='$nome',U.email='$email',U.senha='$senha',P.foto='$UimgNNo' WHERE U.email='$emailant' AND P.cod_pessoa=U.pessoa" ;
@@ -24,6 +24,7 @@ $UimgNNo = mysqli_real_escape_string($conexao, $_SESSION['UimgNNo']);
 	$_SESSION['Nome_Completo'] = $nome;
 	$_SESSION['Email'] = $email;
 	$_SESSION['Senha'] = $senha;
+	$_SESSION['UserImg'] = $UimgNNo;
 	$_SESSION['auxiliar'] = "Sucesso ao alterar seus dados"; 
 	header("Location: ../../perfil.php");
  }

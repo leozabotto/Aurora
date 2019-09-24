@@ -33,8 +33,7 @@
                     <div class="col s12">
                         <h5> Meu Perfil </h5>
                     </div>
-                </div>
-                
+                </div>                
                 <form name="UFoto" method = "POST" action = "DAL/Perfil/Class_inserirUfoto.php" enctype="multipart/form-data">
                     <div class="row center-align">
                         <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
@@ -138,7 +137,7 @@
         <script src="BLL/Editar.js"></script>	
 
         <script>
-            $.ajax({
+            /*$.ajax({
                 // A propriedade `url` é local, arquivo, script, alvo de sua requisição.
                 url: "DAL/Perfil/Class_inserirUfoto.php",
 
@@ -168,7 +167,7 @@
             // que será executada quando a requisição de sucesso estiver completa.
             request.always(function() {
             console.log("completou");
-            });
+            });*/
         </script>    
         
 	</body>

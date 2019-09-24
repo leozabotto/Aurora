@@ -58,7 +58,7 @@
                         <div class="card">
                             <div class="row mt-2 pl-2">
                                 <div class="col s4 m2">
-                                    <img src="../img/usericon.png" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
+                                    <img src="<?php if(!empty($_SESSION['UserImg'])){echo "../uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "../img/usericon.png";}?>" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
                                 </div>
                                 <div class="col s6">
                                     <div class="row mt-5">
