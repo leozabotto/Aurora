@@ -13,7 +13,7 @@
             $usernick =  $objeto['usernick']; 
                                      
                 //cria a querry inserir os dados da pessoa
-                $sql = "INSERT INTO TB_pessoa (Nome, sexo, Data_de_nascimento, tipo, foto) VALUES ('$nome', '$sexo', '$data_nascimento', 'Aluno','nulo')";
+                $sql = "INSERT INTO TB_pessoa (Nome, sexo, Data_de_nascimento, tipo) VALUES ('$nome', '$sexo', '$data_nascimento', 'Aluno')";
                 
                 //chama função que vai conectar ao banco e executar a query de insert da pessoa
                 $resultado = Func_executeinsert_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 40
