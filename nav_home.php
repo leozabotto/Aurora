@@ -60,7 +60,12 @@
              <!--<li><a href="#!" class="disabled"><i class="material-icons black-text">star</i>Favoritos</a></li>-->
             <li><a href="forum/forum-index.php" class="waves-effect"><i class="material-icons black-text">question_answer</i>Fórum</a></li>
             <li><a href="perfil.php" class="waves-effect"><i class="material-icons black-text"> account_box</i>Meu Perfil</a></li>
-            <li><a href="gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>
+            <?php
+                 if ($_SESSION['Categoria'] == "Tutor")
+                 {
+                 echo '<li><a href="gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>';
+                 }
+             ?>
             <li><a href="sair.php" class="waves-effect waves-light btn red">Sair</a></li>
         </ul>
     </body>
