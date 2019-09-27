@@ -48,7 +48,7 @@
                     <div class="background">
                         <img src="img/carrossel_5.png">
                     </div> 
-                    <a href="#!user"><img class="circle" src="<?php if(file_exists("uploads/img_Uperf/".$_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";unset($_SESSION['UserImg']);}?>"></a>
+                    <a href="#!user"><img class="circle" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"></a>
                     <a href="#!name"><span class="white-text"> <?php echo $_SESSION['User_Name']; ?> </span></a><br>
                     <a href="#"><span class="white-text email"><?php echo $_SESSION['Nome_Completo']; ?></span></a>
                     <a href="#"><span class="white-text">Ranking: <?php //$_SESSION['PosicaoRanking']; ?>º </span></a>
