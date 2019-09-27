@@ -36,7 +36,7 @@
                                 <optgroup label="Selecione:">            
                                     <option value="Dúvidas">Dúvidas</option>
                                     <option value="Lição de Casa">Lição de Casa</option>
-                                    <option value="mapas">Mapas Mentais</option>
+                                    <!-- <option value="mapas">Mapas Mentais</option> -->
                                 </optgroup>     
                             </select>  
                             <label>Categoria</label>              

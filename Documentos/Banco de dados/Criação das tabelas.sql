@@ -44,7 +44,8 @@ CREATE TABLE TB_Materias
 cod_materia int PRIMARY KEY auto_increment,
 Nome varchar(50),
 imagem varchar(100),
-cor varchar(50)
+cor varchar(50),
+tipo varchar(10) 
 );
 
 CREATE TABLE TB_Conteudos 
@@ -135,13 +136,78 @@ tema varchar(50),
 questao int,
 FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
 );
--- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele
-INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`) VALUES ('Português', 'spellcheck', 'green');
-INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`) VALUES ('Matemática', 'add', 'red');
+-- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele + tipo
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Português', 'spellcheck', 'deep-purple', 'humanas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Matemática', 'plus_one', 'red', 'exatas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Física', 'wb_incandescent', 'text-accent-3 amber', 'exatas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Química', 'whatshot', 'deep-orange', 'exatas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Biologia', 'pan_tool', 'green', 'biologicas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('História', 'local_library', 'purple', 'humanas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Geografia', 'public', 'text-accent-4 cyan', 'humanas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Filosofia', 'lightbulb_outline', 'amber', 'humanas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Sociologia', 'directions_walk', 'pink', 'humanas');
 
--- adiciona os conteudos 1 e pt e 2 e mat
+
+-- adiciona os conteudos 1 e pt , 2 e mat, 3 fis, 4 quim, 5 bio, 6 hit, 7 geo, 8 filo, 9 socio
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Gramática', '1');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Literatura', '1');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Interpretação', '1');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Redação', '1');
-INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Álgebra', '2');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Literatura', '1');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Álgebra e Aritmética', '2');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Trigonometria', '2');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Geometria Plana', '2');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Geometria Espacial', '2');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Geometria Analítica', '2');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Conceitos Iniciais', '3');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Mecânica', '3');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Termologia', '3');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Óptica', '3');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Ondulatória', '3');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Eletromagnetismo', '3');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Física Geral', '3');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Química Geral e Inorgânica', '4');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Química Orgânico', '4');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Físico-Química', '4');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Conceitos Inciais', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Bioquímica', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Citologia', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Embriologia', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Histologia', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Seres Vivos', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Anatomia Fisiologia', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Genética', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Evolução', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Ecologia', '5');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Conceitos Iniciais', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Mundo Antigo', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Mundo Medieval', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Mundo Moderno', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Mundo Contemporâneo', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Brasil Colonial', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Brasil Império', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Brasil República', '6');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('História Geral', '6');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Geografia do Brasil', '7');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Geografia Física', '7');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Geografia Geral', '7');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Filosofia Antiga', '8');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Filosofia Medieval', '8');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Filosofia Moderna', '8');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Filosofia Contemporânea', '8');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Sociólogos', '9');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Cultura', '9');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Movimentos Sociais', '9');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Política', '9');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Democracia', '9');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Cidadania', '9');
+
+

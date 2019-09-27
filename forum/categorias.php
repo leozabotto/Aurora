@@ -64,11 +64,11 @@
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS Lição de Casa-->
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES Lição de Casa-->
                                     </tr>
-                                    <tr>
+                                   <!-- <tr>
                                         <td> <a class="" href=""> &nbsp; Mapas Mentais </a> </td>
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS Mapas Mentais-->
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES Mapas Mentais-->
-                                    </tr>
+                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS Mapas Mentais
+                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES Mapas Mentais
+                                    </tr> -->
                                 </tbody>
                             <table>
                         </div>
