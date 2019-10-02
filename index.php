@@ -37,6 +37,7 @@
         <script> 
            $('.carousel.carousel-slider').carousel({
                 fullWidth: true,
+                fullHeight: true,
             });
         </script>        
    

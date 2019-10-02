@@ -14,7 +14,8 @@
 	
 	<body class="grey lighten-5">
 		<?php	
-            include 'nav_home.php';           
+            include 'nav_home.php';   
+            include_once "DAL/Class_conexao_DAL.php";                
 		?>
 
 		<main>	
@@ -36,13 +37,12 @@
 
                 <div id="cont" class="row"> <!--Adicionar Conteúdo-->
 
-                    <form name="" action="" method="">
+                    <form name="cad_conteudo" action="Class_cad_conteudo_DAL.php" method="POST">
                         <div class="input-field col s12 m3 l3">
-                            <select id="#" name="#" required> <!--Campo da Disciplina--> 
+                            <select id="#" name="disciplina" required> <!--Campo da Disciplina--> 
                                 <optgroup label="Selecione:">      
-                                    <option value="#">Disciplina 1</option>
-                                    <option value="#">Disciplina 2</option>
-                                    <option value="#">Disciplina 3</option>
+                                    <!-- pega as matérias no banco e coloca na caixa de seleção -->
+                                    <?php include "DAL/Forum/Class_disciplina_DAL.php"; ?>
                                 </optgroup>     
                             </select>  
                             <label>Disciplina</label>              
@@ -79,11 +79,8 @@
                     <form name="" action="" method="">
                         <div class="input-field col s12 m3 l3">
                             <select id="#" name="#" required> <!--Campo da Disciplina--> 
-                                <optgroup label="Selecione:">            
-                                    <option value="#">Disciplina 1</option>
-                                    <option value="#">Disciplina 2</option>
-                                    <option value="#">Disciplina 3</option>
-                                </optgroup>     
+                                <!-- pega as matérias no banco e coloca na caixa de seleção -->
+                                <?php include "DAL/Forum/Class_disciplina_DAL.php"; ?>
                             </select>  
                             <label>Disciplina</label>              
                         </div>  

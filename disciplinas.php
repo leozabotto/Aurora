@@ -24,7 +24,7 @@
                 <div class="container"> 
                     <div class="row center-align mt-2">
                         <div class="col s12">
-                            <h4> Conteúdos </h4>
+                            <h4> Disciplinas </h4>
                         </div>
                     </div>
                     <div class="row mt-2">
@@ -33,57 +33,185 @@
                                 <li class="tab col s3"><a class="active" href="#geral">Geral</a></li>
                                 <li class="tab col s3"><a href="#humanas">Humanas</a></li>
                                 <li class="tab col s3"><a href="#exatas">Exatas</a></li>
-                                <li class="tab col s3"><a href="#tecnicas">Técnicas</a></li>
+                                <li class="tab col s3"><a href="#bio">Biológicas</a></li>
                             </ul>
                         </div>  
                     </div>                  
             
                     <div id="geral" class="row"> <!--  Todas as gerais ficam dentro dessa row-->
 
-                        <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
-                                    <a href="disciplinas-cont.php"><img class="activator" src="img/cards/pt/gramatica.png"></a>
+                                   <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Português">    <img class="activator" src="uploads/img_Materias/port.png"> </a>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Matemática">    <img class="activator" src="uploads/img_Materias/mat.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Física">    <img class="activator" src="uploads/img_Materias/fis.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Química">    <img class="activator" src="uploads/img_Materias/quim.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Biologia">    <img class="activator" src="uploads/img_Materias/bio.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=História">    <img class="activator" src="uploads/img_Materias/hist.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Geografia">    <img class="activator" src="uploads/img_Materias/geo.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Filosofia">    <img class="activator" src="uploads/img_Materias/filo.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Sociologia">    <img class="activator" src="uploads/img_Materias/socio.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+            
+
+
                     </div>
 
                     <div id="humanas" class="row"> <!--  Todas as humanas ficam dentro dessa row-->
-
-                        <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
+                    
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="img/cards/pt/literatura.png">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Português">    <img class="activator" src="uploads/img_Materias/port.png"> </a>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=História">    <img class="activator" src="uploads/img_Materias/hist.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Geografia">    <img class="activator" src="uploads/img_Materias/geo.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Filosofia">    <img class="activator" src="uploads/img_Materias/filo.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Sociologia">     <img class="activator" src="uploads/img_Materias/socio.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+                      
                     </div>
 
                     <div id="exatas" class="row"> <!--  Todas as exatas ficam dentro dessa row-->
-
-                        <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
+                    
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="img/cards/mat/funcao.png">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Matemática">    <img class="activator" src="uploads/img_Materias/mat.png"> </a>
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Física">    <img class="activator" src="uploads/img_Materias/fis.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col s12 m6 l6">
+                            <div class="card hoverable">
+                                <div class="card-image card-image waves-effect waves-block waves-light">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Química">    <img class="activator" src="uploads/img_Materias/quim.png"> </a>
+                                </div>
+                            </div>
+                        </div>
+                       
                     </div>
 
-                    <div id="tecnicas" class="row"> <!--  Todas as exatas ficam dentro dessa row-->
-
-                    <!-- Para cada disciplina, é criado um desse com sua respectiva imagem -->
+                    <div id="bio" class="row"> <!--  Todas as biológicas ficam dentro dessa row-->
+                        
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="img/cards/mat/matriz.png">
+                                    <!--LINK PARA CONTEÚDO--> <a href="disciplinas-cont.php?disc=Biologia">    <img class="activator" src="uploads/img_Materias/bio.png"> </a>
                                 </div>
                             </div>
                         </div>
+                
                     </div>
                     
 			</main>

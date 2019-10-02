@@ -5,7 +5,7 @@
         //variaveis de conexão
         $host = "localhost";
         $user = "root";
-        $password = "";
+        $password = "@etec123";
         $database = "DB_Aurora";
 
         //execeuta conexao

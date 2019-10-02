@@ -138,7 +138,7 @@ FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
 );
 -- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele + tipo
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Português', 'spellcheck', 'deep-purple', 'humanas');
-INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Matemática', 'plus_one', 'red', 'exatas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Matemática', 'plus_one', 'green', 'exatas');
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Física', 'wb_incandescent', 'text-accent-3 amber', 'exatas');
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Química', 'whatshot', 'deep-orange', 'exatas');
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Biologia', 'pan_tool', 'green', 'biologicas');

@@ -16,7 +16,11 @@
 .picker__close { color: #6d4e7a !important;}
 .picker__today { color: #6d4e7a !important;}
 
-
+.dropdown-content {
+  max-height: 350px !important;
+  overflow-y: auto !important;
+  backface-visibility: hidden !important;
+}
 
 main {
   flex: 1 0 auto;

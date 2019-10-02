@@ -22,11 +22,49 @@
 			<main>	
 
 			
-                <div class="row center-align mt-5">
+                <div class="row center-align mt-2">
                     <div class="col s12">
-                        <h5> Bem-vindo ao Aurora, <?php echo $_SESSION['Nome_Completo']?>! </h5>
-                    <div class="col s12 m5"> <!-- IMAGEM DO USUÁRIO -->
-                        <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="responsive-img user-img preview-img" id="img_perfil" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"></label></div> <br>
+                        <h5> Bem-vindo ao Aurora! </h5>
+                    <div class="col s8 offset-s2 m2 mt-2 offset-m2"> <!-- IMAGEM DO USUÁRIO -->
+                        <img class="responsive-img circle user-img preview-img" id="img_perfil" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"/>
+                    </div>
+                    <div class="col s12 m8">
+                        <h5> <?php echo $_SESSION['User_Name']?> </h5>
+                        <table class="highlight">
+                            <thead class="centered">
+                                <tr>
+                                    <th> Nome </th> 
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <?php echo $_SESSION['Nome_Completo']?>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th> E-mail </th>
+                                    <th></th>
+                                </tr>
+                            </thead> 
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <?php echo $_SESSION['Email']?>
+                                    </td>
+                                </tr>
+                            </tbody>
+                           
+        
+                       
+                            
+                            
+                        </table>
+
                     </div>
                 <div>
 				
