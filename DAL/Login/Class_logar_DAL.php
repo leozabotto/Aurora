@@ -35,7 +35,9 @@
         $_SESSION['UserImg'] = $result['foto'];
         $_SESSION['Email'] = $pessoa['email'];
         $_SESSION['Senha'] = $pessoa['senha'];
-        echo $_SESSION['UserImg'];
+        $_SESSION['Nasc'] = $result['nasc'];
+        $_SESSION['Sexo'] = $result['sexo'];
+        echo $_SESSION['Sexo'];
         header("Location: ../../home.php");
     }
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56

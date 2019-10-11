@@ -12,13 +12,7 @@ function FunAlt(){
                 Retorno.innerText = "Campo Nome vazio!";
                 return false;
             }
-            //Testa se e-mail ta vazio
-            if(Email == "")
-            {
-                var Retorno = document.getElementById("Retorno");
-                Retorno.innerText = "Campo Email vazio!";
-                return false;
-            }
+           
             //Testa se senha ta vazio
             else if(Senha == "")
             {

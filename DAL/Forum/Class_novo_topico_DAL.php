@@ -22,14 +22,19 @@
 
     if($result == "Mensagem postada com sucesso!")
     {
-        echo('<div id="modal1" class="modal">
+        echo('<div id="modal1" class="modal">                     
         <div class="modal-content">
-         <h4>Postagem criada com sucesso!</h4>
-         <p>Seu post foi criado com sucesso! Basta ir na categoria correspondente que você irá encontrá-lo. </p>
+            <div class="row center-align">
+                <div class="row">
+                    <img class="responsive-img col s2 offset-s5" src="../../img/AuroraLogo.png"/>
+                </div>
+                <h4>Seu post foi criado com sucesso! </h4>
+            <p> Basta ir na categoria correspondente que você irá encontrá-lo. </p>
+            </div>
         </div>
+        
         <div class="modal-footer">
-            <a href="../../forum/forum-index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
-        </div>
+            <a href="../../login.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>');
     }
     elseif($result == "Campo Vazio!")

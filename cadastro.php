@@ -18,7 +18,7 @@
         <title> Cadastro Aurora </title>
 
     </head>
-    <body>
+    <body class="grey lighten-4">
         <div class="container">
             <div class="row center-align mt-2">
                 <div class="col s12 m8 offset-m2">
@@ -74,9 +74,9 @@
                                         <div class="input-field col s12 m8 offset-m2">
                                             <select id="sexo" name="sexo" required>
                                                 <optgroup label="Selecione:">            
-                                                    <option value="homem">Masculino</option>
-                                                    <option value="mulher">Feminino</option>
-                                                    <option value="outro">Prefiro não identificar</option>
+                                                    <option value="Masculino">Masculino</option>
+                                                    <option value="Feminino">Feminino</option>
+                                                    <option value="Outro">Prefiro não identificar</option>
                                                 </optgroup>     
                                             </select>  
                                             <label>Sexo</label>                            
@@ -131,13 +131,14 @@
                     format: 'dd / mm / yyyy',
                     i18n: {
                         months: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                        monthsShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
                         cancel: 'Cancelar',
                         done: 'Pronto',
-                        weekdaysAbbrev:	['DOM','SEG','TER','QUA','QUI','SEX','SAB'],
+                        weekdaysAbbrev:	['D','S','T','Q','Q','S','S'],
+                        weekdaysShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
                     },
                     maxDate: new Date(),
-                    yearRange: [1930,2019],
-                    
+                    yearRange: [1930,2019],                    
                 });
             });
             

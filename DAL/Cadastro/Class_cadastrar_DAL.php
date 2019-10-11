@@ -35,15 +35,22 @@
         header("Location: ../../login.php");*/
 
         //tudo deu certo, abre modal alertando
-        echo('<div id="modal1" class="modal">
-                <div class="modal-content">
-                 <h4>Usuário cadastrado com sucesso!</h4>
-                 <p>Clique em "Ok" para logar!</p>
+        echo('<div id="modal1" class="modal">                     
+        <div class="modal-content">
+            <div class="row center-align">
+                <div class="row">
+                    <img class="responsive-img col s2 offset-s5" src="../../img/AuroraLogo.png"/>
                 </div>
-                <div class="modal-footer">
-                    <a href="../../login.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
-                </div>
-            </div>');
+                <h4>Você foi cadastrado com sucesso! </h4>
+            <p> Clique em "OK" para ir para página de login! </p>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a href="../../login.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+            
+        ');
     }
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
     

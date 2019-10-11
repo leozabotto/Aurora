@@ -65,16 +65,18 @@
                     <div class="row">
                         <div class="col s12">
                             <form action="" method=""> 
-                                <h6><strong>CODQUEST </strong> </h6> <!--código da questão no banco -->
-                                <p> Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem. Proin laoreet nisl sed dui egestas luctus. Cras at facilisis quam, a fermentum lorem. Suspendisse velit ex, semper eu accumsan eleifend, pulvinar et nunc. Morbi eleifend augue vel dolor finibus, at aliquet arcu tempor. Proin et felis auctor, mattis odio eget, volutpat risus. Quisque ultrices, est vel vehicula cursus, dui orci pellentesque ante, in interdum mauris est non massa? </p>
+                                <h6><strong>CODQUEST <span class="red-text"> CÓDIGO DA QUESTÃO NO BANCO </span> </strong>  </h6> <!--código da questão no banco -->
+                                <p> Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem. Proin laoreet nisl sed dui egestas luctus. Cras at facilisis quam, a fermentum lorem. Suspendisse velit ex, semper eu accumsan eleifend, pulvinar et nunc. Morbi eleifend augue vel dolor finibus, at aliquet arcu tempor. Proin et felis auctor, mattis odio eget, volutpat risus. Quisque ultrices, est vel vehicula cursus, dui orci pellentesque ante, in interdum mauris est non massa? <span class="red-text"> ENUNCIADO DA QUESTÃO </span> </p>
 
                                 <!-- Só aparece se a questão tiver imagem... -->
                                 <p> <img src="img/BannerLogo.png" class="responsive-img"/></p>
+                                <span class="red-text"> SE A QUESTÃO TIVER IMAGEM, ELA APARECERÁ ACIMA. <BR> <BR> ABAIXO SÃO AS ALTERNATIVAS, CADA LINK CORRESPONDE A UMA ALTERNATIVA, CLICOU -> RESPONDEU. <BR> SE A ALTERNATIVA ESTIVER CORRETA, ELA RECEBERÁ A CLASSE "ACTIVE GREEN" // CASO ESTEJA ERRADA, RECEBERÁ A CLASSE "ACTIVE RED"  </span>
+                                
 
                                 <div class="collection">
                                     <a href="#!" class="collection-item"><b>A</b> &nbsp; &nbsp; Cras at facilisis </a>
                                     <a href="#!" class="collection-item active green"><b>B</b> &nbsp; &nbsp; Aliquam eu sem sem</a> <!--A alternativa certa aparece como verde -->
-                                    <a href="#!" class="collection-item active red"><b>C</b> &nbsp; &nbsp; Morbi eleifend augue</a> <!-- Caso o usuário responda errado, a alternativa respondida recebe as classes active red-->
+                                    <a href="#!" class="collection-item active red"><b>C</b> &nbsp; &nbsp; Morbi eleifend augue</a> <!-- Caso o usuário responda errado, a alternativa respondida recebe a classe active red-->
                                     <a href="#!" class="collection-item"><b>D</b> &nbsp; &nbsp;  Nullam non risus quis </a>
                                     <a href="#!" class="collection-item"><b>E</b> &nbsp; &nbsp; Quisque ultrices </a>
                                 </div>
@@ -83,24 +85,17 @@
                         </div>
                     </div>
                 
+                    <span class="red-text"> ESSA ROW COM RESOLUÇÃO E DIFICULDADE SÓ APARECE DEPOIS DE RESPONDER. UMA VEZ RESPONDIDA, SEMPRE APARECERÁ.  </span> 
                     <div class="row"> <!-- essa row só aparece depois que o usuário responder -->
                         <div class="col s12">
-                            <h6>Resolução</h6> 
+                            <h6>Resolução</h6>
                         </div>
                         <div class="col s12">
-                            <p> Suspendisse velit ex, semper eu accumsan eleifend, pulvinar et nunc. Morbi eleifend augue vel dolor finibus, at aliquet arcu tempor. Proin et felis auctor, mattis odio eget, volutpat risus. Quisque ultrices, est vel vehicula cursus, dui orci pellentesque ante, in interdum mauris est non massa </p> 
+                            <p> Suspendisse velit ex, semper eu accumsan eleifend, pulvinar et nunc. Morbi eleifend augue vel dolor finibus, at aliquet arcu tempor. Proin et felis auctor, mattis odio eget, volutpat risus. Quisque ultrices, est vel vehicula cursus, dui orci pellentesque ante, in interdum mauris est non massa  <span class="red-text"> RESOLUÇÃO CADASTRADA NO BANCO  </span> </p>
                             <!-- <p> é a resolução do banco, só pode aparecer depois que a questão for respondida -->
                         </div>
                         <div class="col s12">
-                        <b> Dificuldade: </b> $dificuldade 
-                        </div>
-                    </div>
-
-                    <div class="row mt-2 center-align">
-                        <div class="input-field col s12 m12 center-align">
-                    
-                            <button class="btn waves-effect waves-light orange darken-2" type="button" name="action" onclick="">Responder</button> 
-                            
+                        <b> Dificuldade: </b> $dificuldade <span class="red-text"> DIFICULDADE CADASTRADA NO BANCO  </span>
                         </div>
                     </div>
                 </div>
@@ -109,6 +104,7 @@
 
                     <div class="col s12 m12">
                         <!--Paginação de acordo com o número de questões-->
+                        <span class="red-text"> CADA QUESTÃO CORRESPONDE A UMA PÁGINA. PESQUISAR COMO FUNCIONA A PAGINAÇÃO. QUANDO CLICAR NA QUESTÃO 2, POR EXEMPLO, ELA RECEBERÁ A CLASSE "active" E A SELECIONADA ANTERIORMENTE RECEBERÁ A "waves-effect" DE VOLTA.  </span> 
                         <ul class="pagination">
                             <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li><!--desabilitado quando estiver na primeira-->
                             <li class="active"><a href="#quest1">1</a></li>
@@ -153,7 +149,7 @@
                                                          
                                                      
 					    });
-                        ;
+                    ;
                 } 
                 else 
                 {   //se nao funcionar nao faz nada
