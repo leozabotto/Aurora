@@ -19,8 +19,8 @@ function FunEdit(){
     document.getElementById('Uimg').disabled = 0;
     document.getElementById('email').disabled = 0;
     document.getElementById('passuser').disabled = 0;
-    // document.getElementById('nasc').disabled = 0;
-    document.getElementById('sexo').disabled = 0;
+    document.getElementById('nasc').disabled = 0;
+    document.getElementsByName('sexo').disabled = 0;
 }
 
 function FunCan(){
@@ -40,8 +40,8 @@ function FunCan(){
     document.getElementById('Uimg').disabled = 1;
     document.getElementById('email').disabled = 1;
     document.getElementById('passuser').disabled = 1;
-    // document.getElementById('nasc').disabled = 1;
-    document.getElementById('sexo').disabled = 1;
+    document.getElementById('nasc').disabled = 1;
+    document.getElementById('sexoi').disabled = 1;
 }
 
 

@@ -54,13 +54,6 @@
                                             </div>
                                             <div class="col s12 m12">
                                                 <div class="input-field col s12 m8 offset-m2">
-                                                    <input id="user" type="text" name="usernick" value="<?php echo $_SESSION['User_Name']; ?>" class="validate" disabled>
-                                                    <label for="user"> Nome de Usuário </label> <!--Campo Usuário-->
-                                                    <span class="helper-text" data-error="Insira um nome de usuário válido" data-success=""></span>
-                                                </div>
-                                            </div>
-                                            <div class="col s12 m12">
-                                                <div class="input-field col s12 m8 offset-m2">
                                                     <input type="text" id="nasc" name="data_nascimento" class="datepicker" value="<?php echo $_SESSION['Nasc'];?>" disabled> <!--Campo Data de Nascimento-->
                                                     <label for="nasc"> Nascimento </label>
                                                 </div>

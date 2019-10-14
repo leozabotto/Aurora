@@ -3,6 +3,8 @@
 include_once '../Class_conexao_DAL.php';
 include_once '../../nav_home.php';
 
+if(!empty($_FILES['Uimg']['name']))
+{
 	$UimgExt = strtolower(substr($_FILES['Uimg']['name'],-4));//Pega o nome da extesão
     $UimgNNo = $_SESSION['User_Name'] . $UimgExt; //Nomeia o arquivo
     $UimgPasta = "../../uploads/img_Uperf/"; //Defini o nome da pasta em que o arquivo será salvo
@@ -76,18 +78,18 @@ include_once '../../nav_home.php';
         break;
     
     endswitch;
+}
 
 $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3
 
 //pega os valores do formulario
+$usernick = mysqli_real_escape_string($conexao, $_SESSION['User_Name']);
 $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-$email = mysqli_real_escape_string($conexao, $_POST['email']);
 $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-$emailant = mysqli_real_escape_string($conexao, $_POST['emailant']);
 $UimgNNo = mysqli_real_escape_string($conexao, $_SESSION['UserImg']);
 
  //cria a querry aleterar os dados da pessoa
- $sql2 = "UPDATE TB_pessoa AS P, TB_usuario AS U SET P.Nome='$nome', U.senha='$senha',P.foto='$UimgNNo' WHERE U.email='$emailant' AND P.cod_pessoa=U.pessoa" ;
+ $sql2 = "UPDATE TB_pessoa AS P, TB_usuario AS U SET P.Nome='$nome', U.senha='$senha',P.foto='$UimgNNo' WHERE U.usernick='$usernick' AND P.cod_pessoa=U.pessoa" ;
  
  //fazendo query 2
  $resultado2 = Func_executeupdate_DAL($sql2);//localizada no arquivo ../Class_conexão_DAL, linha 27
@@ -95,7 +97,7 @@ $UimgNNo = mysqli_real_escape_string($conexao, $_SESSION['UserImg']);
  if($resultado2=="Registros atualizados com sucesso.")
  {
 	$_SESSION['Nome_Completo'] = $nome;
-	$_SESSION['Senha'] = $senha;
+    $_SESSION['Senha'] = $senha;
 	$_SESSION['UserImg'] = $UimgNNo;
 	$_SESSION['auxiliar'] = "Sucesso ao alterar seus dados"; 
 	header("Location: ../../perfil.php");
