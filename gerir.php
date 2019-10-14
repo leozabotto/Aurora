@@ -9,7 +9,9 @@
         <!--Importando CSS Personalizado-->
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="BLL/ValidarQ.js"></script>
+        <!--Importando arquivo de inserir questões-->
         <style>
        
         </style>
@@ -100,29 +102,29 @@
                             <label> Conteúdo </label>
                         </div>
                         <div class="input-field col s12 m3 l3">
-                            <select id="#" name="#" required> <!--Campo da dificuldade--> 
+                            <select id="difq" name="#" required> <!--Campo da dificuldade--> 
                                 <optgroup label="Selecione:">        
-                                    <option value="#">Fácil</option>
-                                    <option value="#">Média</option>
-                                    <option value="#">Difícil</option>
+                                    <option value="F">Fácil</option>
+                                    <option value="M">Média</option>
+                                    <option value="D">Difícil</option>
                                 </optgroup>     
                             </select>  
                             <label>Dificuldade</label>              
                         </div> 
                         <div class="input-field col s12 m3 l3">
-                            <select id="#" name="#" required> <!--Campo da dificuldade--> 
+                            <select id="respq" name="#" required> <!--Campo da Resposta--> 
                                 <optgroup label="Selecione:">        
-                                    <option value="#">A</option>
-                                    <option value="#">B</option>
-                                    <option value="#">C</option>
-                                    <option value="#">D</option>
-                                    <option value="#">E</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
                                 </optgroup>     
                             </select>  
                             <label>Alternativa Correta</label>              
                         </div> 
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="conteudo" name="conteudo" class="materialize-textarea"></textarea>
+                            <textarea id="enunq" name="conteudo" class="materialize-textarea"></textarea>
                             <label> Enunciado da Questão </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
@@ -152,13 +154,13 @@
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>    
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="conteudo" name="conteudo" class="materialize-textarea"></textarea>
+                            <textarea id="resolq" name="conteudo" class="materialize-textarea"></textarea>
                             <label> Resolução </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
                         <div class="col s12 m12">
                             <div class="input-field col s12 m12 center-align">
-                                <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" onclick="">Enviar</button> <!--Botão para Postar--> 
+                                <button class="btn waves-effect waves-light orange darken-2" type="button" name="action" onclick="FunQue()">Enviar</button> <!--Botão para Postar--> 
                             </div>
                         </div>
                     </form>
