@@ -111,7 +111,7 @@
                             var options = ' <option value="" disabled selected> Selecione </option>';	
                             for (var i = 0; i < j.length; i++) 
                             {
-							    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+							    options += '<option value="' + j[i].cod_tema + '">' + j[i].tema + '</option>';
 						    }//mostra os dados na tela
                             $('#conteudo').html("<div class='input-field col s12 m6 l6'> <select id='id_conteudo' name='conteudo' required> </select> <label>Conteúdo</label> </div>"); 
                             $('#id_conteudo').append(options); 

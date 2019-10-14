@@ -42,7 +42,7 @@
 
                 <div id="cont" class="row"> <!--Adicionar Conteúdo-->
 
-                    <form name="cad_conteudo" action="Class_cad_conteudo_DAL.php" method="POST">
+                    <form name="cad_conteudo" action="DAL/Gerir/Class_cad_conteudo_DAL.php" method="POST">
                         <div class="input-field col s12 m3 l3">
                             <select id="id_disciplina" name="disciplina" required> <!--Campo da Disciplina--> 
                                  
@@ -67,7 +67,7 @@
                             <label for="titulo-topico"> Título do Conteúdo </label> <!--Campo do título da discussão-->
                         </div> 
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="conteudo" name="conteudo" class="materialize-textarea"></textarea>
+                            <textarea id="conteudo" name="texto" class="materialize-textarea"></textarea>
                             <label> Conteúdo </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
@@ -81,7 +81,7 @@
 
                 <div id="quest" class="row"> <!--Adicionar Conteúdo-->
 
-                    <form name="cad_quest" action="" method="">
+                    <form name="cad_quest" action="DAL/Gerir/Class_cad_quest_DAL.php" method="POST">
                         <div class="input-field col s12 m3 l3">
                             <select id="id_disciplina2" name="disciplina" required> <!--Campo da Disciplina--> 
                                      
@@ -102,7 +102,7 @@
                             <label> Conteúdo </label>
                         </div>
                         <div class="input-field col s12 m3 l3">
-                            <select id="difq" name="#" required> <!--Campo da dificuldade--> 
+                            <select id="difq" name="dificuldade" required> <!--Campo da dificuldade--> 
                                 <optgroup label="Selecione:">        
                                     <option value="F">Fácil</option>
                                     <option value="M">Média</option>
@@ -112,55 +112,55 @@
                             <label>Dificuldade</label>              
                         </div> 
                         <div class="input-field col s12 m3 l3">
-                            <select id="respq" name="#" required> <!--Campo da Resposta--> 
+                            <select id="respq" name="resposta" required> <!--Campo da Resposta--> 
                                 <optgroup label="Selecione:">        
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                    <option value="D">D</option>
-                                    <option value="E">E</option>
+                                    <option value="altA">A</option>
+                                    <option value="altB">B</option>
+                                    <option value="altC">C</option>
+                                    <option value="altD">D</option>
+                                    <option value="altE">E</option>
                                 </optgroup>     
                             </select>  
                             <label>Alternativa Correta</label>              
                         </div> 
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="enunq" name="conteudo" class="materialize-textarea"></textarea>
+                            <textarea id="enunq" name="enunciado" class="materialize-textarea"></textarea>
                             <label> Enunciado da Questão </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
                         <div class="input-field col s12 m12 l12">
-                            <input id="alt-a" type="text" name="#" required>
+                            <input id="alt-a" type="text" name="altA" required>
                             <label for="alt-a"> Alternativa A </label> <!--Campo de alternativa-->
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>
                         <div class="input-field col s12 m12 l12">
-                            <input id="alt-b" type="text" name="#" required>
+                            <input id="alt-b" type="text" name="altB" required>
                             <label for="alt-b"> Alternativa B </label> <!--Campo de alternativa-->
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>  
                         <div class="input-field col s12 m12 l12">
-                            <input id="alt-c" type="text" name="#" required>
+                            <input id="alt-c" type="text" name="altC" required>
                             <label for="alt-c"> Alternativa C </label> <!--Campo de alternativa-->
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>  
                         <div class="input-field col s12 m12 l12">
-                            <input id="alt-d" type="text" name="#" required>
+                            <input id="alt-d" type="text" name="altD" required>
                             <label for="alt-d"> Alternativa D </label> <!--Campo de alternativa-->
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>  
                         <div class="input-field col s12 m12 l12">
-                            <input id="alt-e" type="text" name="#">
+                            <input id="alt-e" type="text" name="altE">
                             <label for="alt-e"> Alternativa E </label> <!--Campo de alternativa-->
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>    
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="resolq" name="conteudo" class="materialize-textarea"></textarea>
+                            <textarea id="resolq" name="resolucao" class="materialize-textarea"></textarea>
                             <label> Resolução </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
                         <div class="col s12 m12">
                             <div class="input-field col s12 m12 center-align">
-                                <button class="btn waves-effect waves-light orange darken-2" type="button" name="action" onclick="FunQue()">Enviar</button> <!--Botão para Postar--> 
+                                <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" onclick="">Enviar</button> <!--Botão para Postar--> 
                             </div>
                         </div>
                     </form>
@@ -200,7 +200,7 @@
                             var options = ' <option value="" disabled selected> Selecione </option>';	
                             for (var i = 0; i < j.length; i++) 
                             {
-							    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+							    options += '<option value="' + j[i].cod_tema + '">' + j[i].tema + '</option>';
 						    }//mostra os dados na tela
                             $('#conteudo').html(" <select id='id_conteudo' name='conteudo' required> </select> <label>Conteúdo</label> "); 
                             $('#id_conteudo').append(options); 
@@ -237,7 +237,7 @@
                                 var options = ' <option value="" disabled selected> Selecione </option>';	
                                 for (var i = 0; i < j.length; i++) 
                                 {
-                                    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+                                    options += '<option value="' + j[i].cod_tema + '">' + j[i].tema + '</option>';
                                 }//mostra os dados na tela
                                 $('#conteudo2').html(" <select id='id_conteudo2' name='conteudo2' required> </select> <label>Conteúdo</label> "); 
                                 $('#id_conteudo2').append(options); 
