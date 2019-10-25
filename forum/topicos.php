@@ -52,17 +52,27 @@
                             include_once '../DAL/Class_conexao_DAL.php';
                             $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
 
-                            $sql = "SELECT PF.cod_pergunta, PF.titulo FROM TB_Temas AS T, TB_Perguntas_forum AS PF WHERE T.tema = '$cont' AND T.cod_tema = PF.conteudo  AND PF.categoria = '$tipo'";                                        // executa a query
+                            $sql = "SELECT PF.cod_pergunta, PF.titulo, PF.visualizacoes FROM TB_Temas AS T, TB_Perguntas_forum AS PF WHERE T.tema = '$cont' AND T.cod_tema = PF.conteudo  AND PF.categoria = '$tipo'";                                        // executa a query
                             $dados = mysqli_query($conexao, $sql);
                             // transforma os dados em um array
 
                             while ($linha = mysqli_fetch_assoc($dados)) 
                             {
+                                $pergunta = $linha["cod_pergunta"];
+                           
                                 echo '<tbody>
                                     <tr>
-                                        <td> <a class="" href="exibir-discussao.php?disc='.$linha['cod_pergunta'].'"> &nbsp; '.$linha['titulo'].' </a></td> 
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS-->
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE VISUALIZAÇÕES-->
+                                        <td> <a class="" href="exibir-discussao.php?disc='.$linha['cod_pergunta'].'&vis='.$linha['visualizacoes'].'"> &nbsp; '.$linha['titulo'].' </a></td>';
+                                        
+                                        $sql = "SELECT COUNT(RF.cod_resposta) AS respostas FROM TB_Respostas_forum as RF, TB_Perguntas_forum as PF where RF.pergunta = '$pergunta' and RF.pergunta = PF.cod_pergunta";
+                                        $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                        // executa a query
+                                        $dado = mysqli_query($conexao, $sql);
+                                        // transforma os dados em um array
+                                        $comentario = mysqli_fetch_assoc($dado);
+                                        echo '<td  class="center-align"> <span> '.$comentario["respostas"].' <span> </td>  <!--NÚMERO DE COMENTÁRIOS PORTUGUÊS-->
+                                            
+                                        <td  class="center-align"> <span> '.$linha['visualizacoes'].' <span> </td>  <!--NÚMERO DE VISUALIZAÇÕES-->
                                     </tr>
                                     </tbody>';
                             }

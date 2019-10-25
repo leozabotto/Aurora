@@ -15,7 +15,7 @@
             $usuario = $objeto['pessoa'];
             
                 //cria a querry inserir os dados da pessoa
-                $sql = "INSERT INTO TB_Perguntas_forum (titulo, pergunta, usuario, disciplina, conteudo, categoria, datap) VALUES ('$titulo', '$mensagem', '$usuario', '$disciplina', '$conteudo', '$categoria', '$data')"; 
+                $sql = "INSERT INTO TB_Perguntas_forum (titulo, pergunta, usuario, disciplina, conteudo, categoria, datap, visualizacoes) VALUES ('$titulo', '$mensagem', '$usuario', '$disciplina', '$conteudo', '$categoria', '$data', '0')"; 
 
                 //chama função que vai conectar ao banco e executar a query de insert 
                 $resultado = Func_executeinsert_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 40

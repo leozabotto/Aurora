@@ -57,16 +57,32 @@
                             $dados = mysqli_query($conexao, $sql);
                                 // transforma os dados em um array
 
-                            while ($linha = mysqli_fetch_assoc($dados) ) 
-                            {
-                                echo '<tbody>
-                                        <tr>
-                                            <td> <a class="" href="topicos.php?disc='.$disc.'&tipo='.$tipo.'&cont='.$linha['tema'].'"> &nbsp; '.$linha['tema'].' </a></td> 
-                                            <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS-->
-                                            <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES-->
-                                        </tr>
-                                    </tbody>';
-                            }                                    
+                                while ($linha = mysqli_fetch_assoc($dados) ) 
+                                {
+                                    $disciplina = $linha["cod_tema"];
+                                    echo '<tbody>
+                                            <tr>
+                                                <td> <a class="" href="topicos.php?disc='.$disc.'&tipo='.$tipo.'&cont='.$linha['tema'].'"> &nbsp; '.$linha['tema'].' </a></td>';
+                                                
+                                                $sql = "SELECT COUNT(RF.cod_resposta) AS respostas FROM TB_Respostas_forum as RF, TB_Perguntas_forum as PF where PF.disciplina = '$disciplina' and RF.pergunta = PF.cod_pergunta";
+                                                $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                                // executa a query
+                                                $dado = mysqli_query($conexao, $sql);
+                                                // transforma os dados em um array
+                                                $comentario = mysqli_fetch_assoc($dado);
+                                                echo '<td  class="center-align"> <span> '.$comentario["respostas"].' <span> </td>  <!--NÚMERO DE COMENTÁRIOS PORTUGUÊS-->';
+                                                
+                                                $sql = "SELECT COUNT(cod_pergunta) AS topicos FROM TB_Perguntas_forum where conteudo = '$disciplina'";
+                                                $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                                // executa a query
+                                                $dado = mysqli_query($conexao, $sql);
+                                                // transforma os dados em um array
+                                                $topico = mysqli_fetch_assoc($dado);
+                                                echo '<td  class="center-align"> <span> '.$topico["topicos"].' <span> </td>  <!--NÚMERO DE DISCUSSÕES PORTUGUÊS-->
+                                                
+                                            </tr>
+                                        </tbody>';                                    
+                                }                                   
                             ?>
                         
                     </table>

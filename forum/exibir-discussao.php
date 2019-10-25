@@ -20,10 +20,18 @@
 		<?php	
             include 'nav_home.php';
             $disc = $_GET['disc'];
+            $vis = intval($_GET['vis']);
             //Incluir a conexão com banco de dados
             include_once '../DAL/Class_conexao_DAL.php';
 
             $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
+            
+            $vis = $vis + 1;
+
+            $sql = "UPDATE TB_Perguntas_forum SET visualizacoes = '$vis' WHERE cod_pergunta = '$disc'";
+ 
+            //fazendo query 2
+            $resultado = Func_executeupdate_DAL($sql);
 
             $sql = "SELECT PF.titulo, PF.pergunta, PF.datap, U.usernick, P.tipo, P.foto FROM TB_Perguntas_forum AS PF, TB_Usuario AS U, TB_Pessoa AS P WHERE U.cod_user = PF.usuario && P.cod_pessoa = U.pessoa && PF.cod_pergunta = '$disc' ";                                        // executa a query
             $dados = mysqli_query($conexao, $sql);
