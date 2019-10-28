@@ -46,12 +46,12 @@
                             //Incluir a conexão com banco de dados
                             $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
                             $sql = "SELECT T.cod_tema, T.tema FROM TB_Temas AS T, TB_materias AS D WHERE D.Nome = '$disc' AND T.materia = D.cod_materia";
-                                // executa a query
+                            // executa a query
                             $dados = mysqli_query($conexao, $sql);
-                                // transforma os dados em um array
-
+                            // transforma os dados em um array                            
                             while ($linha = mysqli_fetch_assoc($dados) ) 
                             {
+                                //mostra os temas dos conteudos
                                 echo '<tr>
                                         <tr><td> <a class="" href="disciplinas-cont-list.php?tema='.$linha['tema'].'"> '.$linha['tema'].' </a> </td> </tr>                                            
                                         </tr>';
@@ -64,7 +64,7 @@
                 <div class="row center-align">
                     <div class="col s12">
                     <?php
-                        if ($_SESSION['Categoria'] == "Tutor")
+                        if ($_SESSION['Categoria'] == "Tutor" || $_SESSION['Categoria'] == "ADM" )
                         {
                             echo '<a href="gerir.php" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> ADICIONAR CONTEÚDO </a>';
                         }

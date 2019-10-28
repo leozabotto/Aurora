@@ -21,21 +21,16 @@
     
     //teste do retorno
     if($result != "Usuário cadastrado com sucesso!")
-    {
+    {//1
         //erro na execução, campo vazio ou dados invalidos       
         $_SESSION['auxiliar'] = $result;    
         echo $result;   
         header("Location: ../../cadastro.php");
-    }
+    }//1
     elseif($result == "Usuário cadastrado com sucesso!")
-    {    
-        /*tudo deu certo loga
-        $_SESSION['auxiliar'] = $result;
-        echo $_SESSION['auxiliar'];
-        header("Location: ../../login.php");*/
-
+    {//2
         //tudo deu certo, abre modal alertando
-        echo('<div id="modal1" class="modal">                     
+        echo'<div id="modal1" class="modal">                     
         <div class="modal-content">
             <div class="row center-align">
                 <div class="row">
@@ -48,14 +43,9 @@
         
         <div class="modal-footer">
             <a href="../../login.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
-        </div>
-            
-        ');
-    }
+        </div>';
+    }//2
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
-    
-
-
 ?>
 
 <!--Vinculando Scripts para correta exibição do modal-->

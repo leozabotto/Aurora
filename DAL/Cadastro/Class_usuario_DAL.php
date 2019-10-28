@@ -11,6 +11,6 @@ $result_user = "SELECT * FROM TB_Usuario WHERE usernick LIKE '$usuarios'";
 $resultado_user = mysqli_query($conexao, $result_user);
 
 if(($resultado_user) AND ($resultado_user->num_rows != 0 ))
-{
+{//1
 	echo "User em utilização!";
-}
+}//1

@@ -15,19 +15,19 @@
     
     //teste do retorno
     if($result['auxiliar'] == "erro")
-    {
+    {//1
         //erro na execução, campo vazio ou dados invalidos       
         $_SESSION['auxiliar'] = "Usuário ou senha inválidos!";       
         header("Location: ../../login.php");
-    }
+    }//1
     elseif($result['auxiliar'] == "campo vazio")
-    {
+    {//2
         //erro na execução, campo vazio ou dados invalidos       
         $_SESSION['auxiliar'] = "Campos Vazios";       
         header("Location: ../../login.php");
-    } 
+    }//2
     elseif($result['auxiliar'] == "logar")
-    {    
+    { //3   
         //tudo deu certo loga
         //Se precisar colocar mais alguns campos no perfil(alterar), colocar aqui (sid)
         $_SESSION['User_Name'] = $result['usernick'];
@@ -39,8 +39,5 @@
         $_SESSION['Sexo'] = $result['sexo'];
         echo $_SESSION['Sexo'];
         header("Location: ../../home.php");
-    }
+    }//3
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
-    
-
-?>

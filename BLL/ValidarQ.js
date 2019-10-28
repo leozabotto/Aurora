@@ -69,14 +69,7 @@ function FunQues(){
                 var Retorno = document.getElementById("Retorno");
                 Retorno.innerText = "Campo alternativa D vazio!";
                 return false;
-            }
-            //Testa se senha ta vazio
-            else if(AltE == "")
-            {
-                var Retorno = document.getElementById("Retorno");
-                Retorno.innerText = "Campo alternatica E vazio!";
-                return false;
-            }
+            }            
             //Testa se senha ta vazio
             else if(EnunQ == "")
             {

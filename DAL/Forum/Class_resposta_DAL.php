@@ -15,18 +15,15 @@
     $result = Func_cadastrar_DAL($topico);//localizada no arquivo Class_topico_DAL, linha 3
 
     if($result == "Mensagem postada com sucesso!")
-    {
+    {//1
         header("location: ../../forum/exibir-discussao.php?disc=". $topico['topico']."");
         echo $result;
-    }
+    }//1
     elseif($result == "Campo Vazio!")
-    {
+    {//2
         header("location: ../../forum/exibir-discussao.php");
-    }
+    }//2
     else
-    {
+    {//3
         echo "deu merda por ai";
-    }
-?>
-    
-
+    }//3

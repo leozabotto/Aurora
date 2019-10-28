@@ -17,11 +17,11 @@
      $topico['mensagem'] = mysqli_real_escape_string($conexao, $_POST['mensagem']);
      $topico['pessoa'] = $_SESSION['pessoa'];
     
-     //chama função que vai inserir os dados no banco
+    //chama função que vai inserir os dados no banco
     $result = Func_cadastrar_DAL($topico);//localizada no arquivo Class_topico_DAL, linha 3
 
     if($result == "Mensagem postada com sucesso!")
-    {
+    {//1
         echo('<div id="modal1" class="modal">                     
         <div class="modal-content">
             <div class="row center-align">
@@ -36,15 +36,15 @@
         <div class="modal-footer">
             <a href="../../forum/forum-index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>');
-    }
+    }//1
     elseif($result == "Campo Vazio!")
-    {
+    {//2
         header("location: ../../forum/novo-topico.php");
-    }
+    }//2
     else
-    {
+    {//3
         echo "Há algo errado.";
-    }
+    }//3
 ?>
 
 <!--Vinculando Scripts para correta exibição do modal-->
@@ -55,5 +55,4 @@
     $('#modal1').modal();
     $('#modal1').modal('open'); 
   });
-</script>
-    
+</script>   

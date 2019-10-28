@@ -1,10 +1,10 @@
 <?php 
     //este função contem a query para executar o select de login
     Function Func_logar_DAL($objeto)
-    {       
+    {//1      
         //teste se as variaveis estão vazias 
         if ((!empty($objeto)) && (!empty($objeto['email'])) && (!empty($objeto['senha'])))
-        {
+        {//2
             //tranfere os valores do array para variaveis
             $email =  $objeto['email'];            
             $senha =  $objeto['senha'];        
@@ -17,12 +17,12 @@
             
             //testa o resultado da query
             if (empty($resultado))
-            {
+            {//3
                 //caso nao encontre os valores manda erro
                 $objeto['auxiliar'] = "erro";            
-            }
+            }//3
             else 
-            {
+            {//4
                 //se encontrar manda os dados
                 $_SESSION['pessoa'] = $resultado['pessoa'];
                 $objeto['usernick'] = $resultado['usernick'];
@@ -32,15 +32,13 @@
                 $objeto['sexo'] = $resultado['sexo'];
                 $_SESSION['Categoria'] = $resultado['tipo'];
                 $objeto['auxiliar'] = "logar";           
-            }
-        }
+            }//4
+        }//2
         else
-        {
+        {//5
             //caso algum campo esteja vazio
             $objeto['auxiliar'] =  "campo vazio";
-        }
+        }//5
         //retorna os resultados para a validação
         return $objeto;// rentorna para aquivo Class_logar_DAL, linha 14
-    }
-
-?>
+    }//1

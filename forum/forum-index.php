@@ -15,8 +15,10 @@
     </head>
 	
 	<body>
-		<?php	
-            include 'nav_home.php';          
+        <?php	
+            //inclui a nav
+            include 'nav_home.php';     
+            //inclui a conexão     
             include '../DAL/Class_conexao_DAL.php';      
 		?>
 	
@@ -46,7 +48,10 @@
                             </tr> 
                         </thead>    
                         <tbody>
-                            <?php include_once "../DAL/forum/Class_mostrar_diciplinas_FI_DAL.php"; ?>                                    
+                            <?php 
+                                //mostra as diciplinas
+                                include_once "../DAL/forum/Class_mostrar_diciplinas_FI_DAL.php"; 
+                            ?>                                    
                         </tbody>
                     </table>
                     

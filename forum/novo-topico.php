@@ -11,8 +11,10 @@
     </head>
 	
 	<body>
-		<?php	
+        <?php	
+            //inclui a nav
             include 'nav_home.php';
+            //inclui a conexão
             include_once "../DAL/Class_conexao_DAL.php";                
 		?>
 
@@ -41,23 +43,16 @@
                         </div>  
 
                         <div class="input-field col s12 m6 l6">
-                            <select id="id_disciplina" name="disciplina" required> <!--Campo da disciplina correspondente--> 
-                                    
+                            <select id="id_disciplina" name="disciplina" required> <!--Campo da disciplina correspondente-->                                     
                                     <option value="" disabled selected> Selecione </option>
                                     <!-- pega as matérias no banco e coloca na caixa de seleção -->
-                                    <?php include "../DAL/Forum/Class_disciplina_DAL.php"; ?>
-                                
+                                    <?php include "../DAL/Forum/Class_disciplina_DAL.php"; ?>                                
                             </select>  
                             <label>Disciplina</label>              
                         </div>
-
-                        <!-- mostra os conteudos referentes a disciplina selecionada, ou pelo menos e o que deveria fazer -->
+                        
                         <div id="conteudo">
-                             
-
-                                
-                           
-                            
+                              <!-- mostra os conteudos referentes a disciplina selecionada -->                            
                         </div>
 
                     </div>
@@ -113,9 +108,7 @@
 						    }//mostra os dados na tela
                             $('#conteudo').html("<div class='input-field col s12 m6 l6'> <select id='id_conteudo' name='conteudo' required> </select> <label>Conteúdo</label> </div>"); 
                             $('#id_conteudo').append(options); 
-                            $('select').formSelect();
-                                                         
-                                                     
+                            $('select').formSelect();    
 					    });
                         ;
                 } 

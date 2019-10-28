@@ -3,7 +3,7 @@
     Function Func_cad_conteudo($objeto)
     {       
         //teste se as variaveis estão vazias 
-        if ((!empty($objeto)) && (!empty($objeto['tema'])) && (!empty($objeto['dificuldade'])) && (!empty($objeto['resposta'])) && (!empty($objeto['enunciado'])) && (!empty($objeto['alta'])) && (!empty($objeto['altb'])) && (!empty($objeto['altc'])) && (!empty($objeto['altd'])) && (!empty($objeto['alte'])) && (!empty($objeto['resolucao'])) )
+        if ((!empty($objeto)) && (!empty($objeto['tema'])) && (!empty($objeto['dificuldade'])) && (!empty($objeto['resposta'])) && (!empty($objeto['enunciado'])) && (!empty($objeto['alta'])) && (!empty($objeto['altb'])) && (!empty($objeto['altc'])) && (!empty($objeto['altd'])) && (!empty($objeto['resolucao'])) )
         {
             //tranfere os valores do array para variaveis          
             $tema =  $objeto['tema'];        

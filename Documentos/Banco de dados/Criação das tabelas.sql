@@ -9,87 +9,65 @@ USE DB_Aurora;
 CREATE TABLE TB_Pessoa 
 (
 cod_pessoa int PRIMARY KEY auto_increment,
-Nome varchar(100),
-sexo varchar(15),
-Data_de_nascimento varchar(20),
-tipo varchar(32),
-foto varchar(300),
-nivel int,
-experienia int
+Nome varchar(100) NOT NULL,
+sexo varchar(15) NOT NULL,
+Data_de_nascimento varchar(20) NOT NULL,
+tipo varchar(32) NOT NULL,
+foto varchar(300) NOT NULL
 );
 
 CREATE TABLE TB_Usuario
 (
 cod_user int PRIMARY KEY auto_increment,
-email varchar(100),
-senha varchar(32),
-usernick varchar(50) unique,
+email varchar(100) NOT NULL,
+senha varchar(32) NOT NULL,
+usernick varchar(50) unique NOT NULL,
 pessoa int,
 verif int,
 cod_verif varchar(30),
 FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 );
 
-CREATE TABLE TB_Desempenho
-(
-cod_desempenho int PRIMARY KEY auto_increment,
-pontos int,
-data_questionario char(10),
-usuario int,
-FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
-);
-
 CREATE TABLE TB_Materias 
 (
 cod_materia int PRIMARY KEY auto_increment,
-Nome varchar(50),
-imagem varchar(100),
-cor varchar(50),
-tipo varchar(10) 
+Nome varchar(50) NOT NULL,
+imagem varchar(100) NOT NULL,
+cor varchar(50) NOT NULL,
+tipo varchar(10) NOT NULL
 );
 
 CREATE TABLE TB_Temas
 (
 cod_tema int PRIMARY KEY auto_increment,
-tema varchar(50),
+tema varchar(50) NOT NULL,
 materia int,
-tutor int,
 FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia)
 );
 
 CREATE TABLE TB_Conteudo
 (
 cod_conteudo int PRIMARY KEY auto_increment,
-titulo varchar(100),
-texto text,
-estado varchar(15),
+titulo varchar(100) NOT NULL,
+texto text NOT NULL,
+estado varchar(15) NOT NULL,
 tema int,
 pessoa int,
 FOREIGN KEY(tema) REFERENCES TB_Temas (cod_tema),
 FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 );
 
-CREATE TABLE TB_Imagens_Mapa_mental 
-(
-cod_map_ment int PRIMARY KEY auto_increment,
-tema varchar(100),
-imagen varchar(300),
-usuario int,
-materia int,
-FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia),
-FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
-);
-
 CREATE TABLE TB_Perguntas_forum 
 (
 cod_pergunta int PRIMARY KEY auto_increment,
-titulo varchar(100),
-pergunta text,
-datap varchar(30),
+titulo varchar(100) NOT NULL,
+pergunta text NOT NULL,
+datap varchar(30) NOT NULL,
 usuario int,
 disciplina int,
 conteudo int,
-categoria varchar(50),
+categoria varchar(50) NOT NULL,
+visualizacoes int NOT NULL,
 FOREIGN KEY (conteudo) REFERENCES TB_Temas (cod_tema),
 FOREIGN KEY(disciplina) REFERENCES TB_Materias (cod_materia),
 FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
@@ -98,9 +76,9 @@ FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 CREATE TABLE TB_Respostas_forum 
 (
 cod_resposta int PRIMARY KEY auto_increment,
-resposta varchar(1000),
-verificada int,
-datap varchar(30),
+resposta varchar(1000) NOT NULL,
+verificada int NOT NULL,
+datap varchar(30) NOT NULL,
 usuario int,
 pergunta int,
 FOREIGN KEY(pergunta) REFERENCES TB_Perguntas_forum (cod_pergunta),
@@ -110,15 +88,15 @@ FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 CREATE TABLE TB_Questoes  
 (
 cod_pergunta int PRIMARY KEY auto_increment,
-enunciado text,
-dificuldade varchar(15),
-alt_a text,
-alt_b text,
-alt_c text,
-alt_d text
+enunciado text NOT NULL,
+dificuldade varchar(15) NOT NULL,
+alt_a text NOT NULL,
+alt_b text NOT NULL,
+alt_c text NOT NULL,
+alt_d text NOT NULL,
 alt_e text,
-resposta text,
-resolucao text,
+resposta text NOT NULL,
+resolucao text NOT NULL,
 tema int,
 pessoa int,
 FOREIGN KEY(tema) REFERENCES TB_Temas (cod_tema),
@@ -127,30 +105,14 @@ FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 
 CREATE TABLE TB_Respostas  
 (
-cod_resposta int,
+cod_resposta int PRIMARY KEY,
 resposta text,
 usuario int,
 pergunta int,
-PRIMARY KEY(cod_resposta, usuario,pergunta) ,
 FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user),
 FOREIGN KEY(pergunta) REFERENCES TB_Perguntas_forum (cod_pergunta)
 );
 
-CREATE TABLE TB_Simulado 
-(
-cod_quest_sim int PRIMARY KEY auto_increment,
-data char(10),
-questao int,
-FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
-);
-
-CREATE TABLE TB_Exercicio 
-(
-cod_exercicio int PRIMARY KEY auto_increment,
-tema varchar(50),
-questao int,
-FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
-);
 -- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele + tipo
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Português', 'spellcheck', 'deep-purple', 'humanas');
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Matemática', 'plus_one', 'green', 'exatas');
@@ -163,7 +125,7 @@ INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Sociologia', 'directions_walk', 'pink', 'humanas');
 
 
--- adiciona os conteudos 1 e pt , 2 e mat, 3 fis, 4 quim, 5 bio, 6 hit, 7 geo, 8 filo, 9 socio
+-- adiciona os temas 1 e pt , 2 e mat, 3 fis, 4 quim, 5 bio, 6 hit, 7 geo, 8 filo, 9 socio
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Gramática', '1');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Literatura', '1');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Interpretação', '1');

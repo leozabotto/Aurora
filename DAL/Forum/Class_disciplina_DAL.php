@@ -6,10 +6,10 @@
     // transforma os dados em um array
     $linha = mysqli_fetch_assoc($dados);
     do
-    {
-
+    {//1
         echo'<option value="'.$linha["cod_materia"].'">'.$linha["Nome"].'</option>';
 
-    }while($linha = mysqli_fetch_assoc($dados));// finaliza o loop que vai mostrar os dados                                             
+    }//1
+    while($linha = mysqli_fetch_assoc($dados));// finaliza o loop que vai mostrar os dados                                             
    
     Func_fechaconexao_DAL($conexao);

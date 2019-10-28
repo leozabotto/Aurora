@@ -19,15 +19,24 @@
 
 		<?php	
             include 'nav_home.php';
-            $disc = $_GET['disc'];
+
             //Incluir a conexão com banco de dados
-            include_once '../DAL/Class_conexao_DAL.php';
-
+            include_once '../DAL/Class_conexao_DAL.php';     
             $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
-
+            //contar as vizualizações do topico
+            $disc = $_GET['disc'];
+            if(!empty($_GET['vis']))
+            {
+                $vis = intval($_GET['vis']);               
+                $vis = $vis + 1;    
+                //alterar quantidade de visualizações no banco
+                $sql = "UPDATE TB_Perguntas_forum SET visualizacoes = '$vis' WHERE cod_pergunta = '$disc'";
+                $resultado = Func_executeupdate_DAL($sql);
+            }
+            //buscar informaçoes do topico no banco          
             $sql = "SELECT PF.titulo, PF.pergunta, PF.datap, U.usernick, P.tipo, P.foto FROM TB_Perguntas_forum AS PF, TB_Usuario AS U, TB_Pessoa AS P WHERE U.cod_user = PF.usuario && P.cod_pessoa = U.pessoa && PF.cod_pergunta = '$disc' ";                                        // executa a query
             $dados = mysqli_query($conexao, $sql);
-            // transforma os dados em um array
+            //transforma os dados em um array
             $linha = mysqli_fetch_assoc($dados);
 		?>
 	
@@ -62,6 +71,7 @@
                                 </div>
                                 <div class="col s6">
                                     <div class="row mt-5">
+                                        <!-- mostrar as informações de quem fez a pergunta -->
                                         <h5><?php echo $linha['usernick']; ?> </h5>
                                         <h6><?php echo $linha['datap']; ?> &nbsp </h6> <a href="" class="">Editar</a> | <a href="" class="">Verificar</a> 
                                         <h6><?php echo $linha['tipo']; ?>  </h6> <!--Se é aluno ou tutor-->
@@ -72,7 +82,7 @@
                             <div class="row">
                                 <div class="col s12">
                                     <div class="col s12">
-
+                                        <!-- mostrar a pergunta -->
                                         <p><?php echo $linha['pergunta']; ?> 
 
                                     </div>
@@ -86,15 +96,16 @@
                     $sql = "SELECT RF.resposta, RF.verificada, RF.datap, U.usernick, P.tipo, P.foto, RF.cod_resposta FROM TB_Respostas_forum AS RF, TB_Perguntas_forum AS PF, TB_Usuario AS U, TB_Pessoa AS P WHERE RF.pergunta = PF.cod_pergunta && P.cod_pessoa = U.pessoa && U.cod_user = RF.usuario && PF.cod_pergunta = '$disc'  order by RF.cod_resposta  ASC ";                                        
                     // executa a query
                     $dados = mysqli_query($conexao, $sql);
-                    // transforma os dados em um array
-
+                    // transforma os dados em um array e mostra
                     while ($linha = mysqli_fetch_assoc($dados) ) 
                     {
                         echo 
                             '<div class="row">
                             <div class="col s12">';
+                            //testa se a resposta e verificada por algum tutor
                             if($linha['verificada'] == 0) 
                             {
+                                // se não for válida fica branca
                                 echo'<div class="card"><div class="row mt-2 pl-2">
                                 <div class="col s4 m2">
                                     <img src="../uploads/img_Uperf/'.$linha['foto'].'" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
@@ -106,6 +117,7 @@
                             }
                             else
                             {
+                                // se for válida fica verde
                                 echo'<div class="card green lighten-4"><div class="row mt-2 pl-2">
                                 <div class="col s4 m2">
                                     <img src="../uploads/img_Uperf/'.$linha['foto'].'" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
@@ -115,12 +127,12 @@
                                         <h5>'.$linha['usernick'].'</h5>
                                         <h6>'.$linha['datap'].'&nbsp <h6>  ';
                             }
-                        if(!empty($linha['foto'])){
+                            //resto da resposta
                             echo'
-                                            <h6>'.$linha['tipo'].' </h6> <!--Se é aluno ou tutor-->
-                                        </div>
+                                        <h6>'.$linha['tipo'].' </h6> <!--Se é aluno ou tutor-->
                                     </div>
                                 </div>
+                            </div>
 
                                 <div class="row">
                                     <div class="col s12">
@@ -134,37 +146,10 @@
                                 </div> 
                                 </div>
                                 </div>';
-                        }
-                        else{
-                            echo'<div class="row mt-2 pl-2">
-                                    <div class="col s4 m2">
-                                        <img src="../img/usericon.png" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="row mt-5">
-                                            <h5>'.$linha['usernick'].'</h5>
-                                            <h6>'.$linha['datap'].'&nbsp <h6> <a href="" class="">Editar</a> | <a href="" class="">Verificar</a> 
-                                            <h6>'.$linha['tipo'].' </h6> <!--Se é aluno ou tutor-->
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col s12">
-                                        <div class="col s12">
-
-                                            <p>'.$linha['resposta'].' 
-
-                                        </div>
-                                    </div>
-                                </div>   
-                                </div> 
-                                </div>
-                                </div>';
-                        }
+                        
                     }
                 ?>
-
+                <!-- area para responder o topico -->
                 <div class="row">
                     <form method ="POST" action="../DAL/Forum/Class_resposta_DAL.php?disc=<?php echo $disc;?>">
                         <div class="col s12">

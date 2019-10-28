@@ -12,12 +12,12 @@ $id_conteudo = $_REQUEST['id_conteudo'];
     // transforma os dados em um array
 
     while ($linha = mysqli_fetch_assoc($dados) ) 
-    {
+    {//1
 		  $conteudo[] = array(
 			'cod_tema'	=> $linha ['cod_tema'],
 			'tema' => ($linha ['tema']),
 		);
-	  }
+	  }//1
   Func_fechaconexao_DAL($conexao);
   
 	echo(json_encode($conteudo));

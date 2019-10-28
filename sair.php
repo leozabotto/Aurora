@@ -1,4 +1,5 @@
 <?php
+//exclui todas as variaveis de sessão do usúario
 session_start();
 unset($_SESSION['pessoa']);
 unset($_SESSION['User_Name']);
