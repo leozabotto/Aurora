@@ -24,17 +24,26 @@
 
 		<main>	
 		    <div class="container">
+            
                 <div class="row mt-2">
                     <div class="col s12 m12 center-align"> 
-                        <h4>Gerenciar Plataforma</h4>
+                    
+                        <table class="bordered">
+                            <thead>
+                            <tr>
+                                <th class="center-align"> <h4>Gerenciar Plataforma</h4> </th>
+                            
+                            </thead>
+                        </table>
                     </div> 
                 </div>
                 <div class="row mt-2">
                     <div class="col s12">
-                        <ul id="#" class="tabs grey lighten-5">
-                            <li class="tab col s3"><a class="active" href="#cont">Adicionar Conteúdo</a></li>
-                            <li class="tab col s3"><a href="#quest">Adicionar Questões</a></li>
-                            <li class="tab col s3"><a href="#inst">Instruções</a></li>  
+                        <h5>Adição de Conteúdos</h5>
+                        <ul id="#" class="tabs grey lighten-5 mt-2">
+                            <li class="tab col s3"><a class="active" href="#cont">Conteúdo</a></li>
+                            <li class="tab col s3"><a href="#quest">Questões</a></li>
+                            <li class="tab col s3"><a href="#inst">Passo a Passo</a></li>  
                         </ul>
                     </div>  
                 </div>
@@ -167,11 +176,11 @@
 
                 <div id="inst">
                     <h5><b> Adição de Conteúdo </b></h5>
-                    <p class="red-text"> É importante que você tenha conhecimento de HTML e Materialize CSS para fazer suas postagens. As intruções do materialize encontram-se no final dessa seção. </p>
+                    <p class="red-text"> É importante que você tenha conhecimento de HTML e Materialize CSS para fazer suas postagens. As intruções do materialize encontram-se no final dessa seção. Se preferir, <a class="red-text" href="#instmaterialize"><u>clique aqui</u></a> para ir diretamente à seção do Materialize CSS. </p>
                     <p> Para fazer a adição de conteúdos na plataforma, siga os seguintes passos: </p>
                     <p> 1º Preencha corretamente os seguintes campos: </p>
                     <img class="responsive-img" src="img/inst/1.png"/>
-                    <p> 2º Baixe o arquivo modelo e escreva nele o seu arquivo HTML: </p>
+                    <p> 2º Baixe o arquivo modelo e escreva nele o seu código HTML: </p>
                     <p> LINK LINK LINK LINK </p>
                     <p> Para escrever, basta usar um editor de textos qualquer ou alguma IDE (recomenda-se o Visual Studio Code). </p>
                     <p> 3º Abra a página para verificar se está de acordo com o desejado:
@@ -184,10 +193,143 @@
                     <div class="col s12">
                         <img class="responsive-img" src="img/inst/4.png"/>
                     </div>
-                    
-                </div>                                 
-                                               
+                    <p> Pronto! Agora basta esperar o email de confirmação dos nossos administradores informando se o seu conteúdo foi aprovado. Caso esteja tudo certo, ele se tornará disponível para todos os alunos acessarem. </p>
+                    <p> É importante manter uma <b> cópia de segurança do seu conteúdo</b>, pois caso ele seja recusado será necessário fazer as alterações descritas e enviá-lo para análise novamente!
+                    <p> Mais instruções sobre com anexar imagens estão inclusas no arquivo modelo. </p>
+                </div>    
+
+                <?php if ($_SESSION['Categoria'] == "ADM") {
+
+                echo '                          
+
+                <div class="row mt-2">
+                    <div class="col s12 m12"> 
+                        <h5>Aprovação de Conteúdos</h5>       
+                        <ul id="#" class="tabs grey lighten-5 mt-2">
+                            <li class="tab col s3"><a class="active" href="#contp">Conteúdos Pendentes</a></li>
+                            <li class="tab col s3"><a href="#questp">Questões Pendentes</a></li>
+                        </ul>
+                    </div>  
+                </div>
+
+                <div id="contp">
+                    <div class="row">
+                        <table class="striped center-align responsive-table">
+                            <thead>
+                                <tr>
+                                    <th class=""> Título </th>
+                                    <th class=""> Disciplina </th>
+                                    <th class=""> Conteúdo </th>
+                                    <th class=""> Autor </th>
+                                    <th class=""> Ação</th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+
+                                <tr> <!-- FAZER SELECT NO BANCO -->
+                                    <td> <a href="exibir.php">$TITULO_DO_CONTEUDO </td>
+                                    <td> $DISCIPLINA </td>
+                                    <td> $TEMA </td>
+                                    <td> $AUTOR </td>
+                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+                <div id="questp">
+                    <div class="row">
+                        <table class="striped center-align responsive-table">
+                            <thead>
+                                <tr>
+                                    <th class=""> Código </th>
+                                    <th class=""> Disciplina </th>
+                                    <th class=""> Conteúdo </th>
+                                    <th class=""> Enviada por: </th>
+                                    <th class=""> Ação</th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+
+                                <tr> <!-- FAZER SELECT NO BANCO -->
+                                    <td> <a href="exibir.php">$COD_QUESTAO </td>
+                                    <td> $DISCIPLINA </td>
+                                    <td> $TEMA </td>
+                                    <td> $AUTOR </td>
+                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+
+                <div class="row mt-2">
+                    <div class="col s12 m12"> 
+                        <h5>Aprovação de Tutoria</h5>       
+                        <ul id="#" class="tabs grey lighten-5 mt-2">
+                            <li class="tab col s3"><a class="active" href="#solic">Solicitações</a></li>
+                            <li class="tab col s3"><a href="#tut">Atuais Tutores</a></li>
+                        </ul>
+                    </div>  
+                </div>
+
+                <div id="solic">
+                    <div class="row">
+                        <table class="striped center-align responsive-table">
+                            <thead>
+                                <tr>
+                                    <th class=""> Nome </th>
+                                    <th class=""> Email </th>
+                                    <th class=""> Nome de Usuário </th>
+                                    <th class=""> Ação</th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+
+                                <tr> <!-- FAZER SELECT NO BANCO -->
+                                    <td> $NOME_SOLICITANTE </td>
+                                    <td> $EMAIL_SOLICITANTE</td>
+                                    <td> $NICK_SOLICITANTE </td>
+                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="tut">
+                    <div class="row">
+                        <table class="striped center-align responsive-table">
+                            <thead>
+                                <tr>
+                                    <th class=""> Nome </th>
+                                    <th class=""> Email </th>
+                                    <th class=""> Nome de Usuário </th>
+                                    <th class=""> Ação</th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+
+                                <tr> <!-- FAZER SELECT NO BANCO -->
+                                    <td> $NOME_TUTOR </td>
+                                    <td> $EMAIL_TUTOR</td>
+                                    <td> $NICK_TUTOR </td>
+                                    <td> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                ';
+                }
+                ?>
+
+
             </div>
+
+            
 		
         </main>
     
@@ -277,7 +419,7 @@
         
         <script>
             M.AutoInit();
-            M.toast({html: '<span><i class="small material-icons">error_outline</i> &nbsp;Verifique as instruções de postagem!'})
+            M.toast({html: '<span><i class="small material-icons">error_outline</i> &nbsp;Verifique as instruções de postagem em "Passo a Passo"!'})
         </script>
 
         

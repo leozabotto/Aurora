@@ -103,8 +103,11 @@
                                             </div>
                                             <div class="col s12 m12">
                                             <?php
-                                                if ($_SESSION['Categoria'] == "Tutor")
+                                                if ($_SESSION['Categoria'] == "ADM")
                                                 {
+                                                    echo '<span> Você é um ADM! #TeamAurora \o/';
+                                                }
+                                                else if ($_SESSION['Categoria'] == "Tutor") {
                                                     echo '<span> Você é um Tutor. Obrigado por participar da equipe!';
                                                 }
                                                 else{

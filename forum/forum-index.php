@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col s12">
                         <h5 class="user_forum"> Olá, <?php echo $_SESSION['User_Name']; ?> </h5>
-                        <h6 class="user_forum"> Bem-vindo(a) ao Fórum Aurora </h6>
+                        <h6 class="user_forum"> Bem-vindo(a) ao Fórum Aurora! </h6>
                     </div>
                     <!-- <div class="input-field col s12">      
                         <input id="icon_prefix" type="text" class="validate" placeholder="Digite aqui para pesquisar...">
