@@ -111,7 +111,7 @@ resposta text,
 usuario int,
 pergunta int,
 FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user),
-FOREIGN KEY(pergunta) REFERENCES TB_Perguntas_forum (cod_pergunta)
+FOREIGN KEY(pergunta) REFERENCES TB_Questoes (cod_pergunta)
 );
 
 -- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele + tipo

@@ -12,7 +12,7 @@
     if($RespQ == "s")
     {
     //chama função que vai buscar os dados no banco
-    $sql = "SELECT * FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.tema = '$ContQ' && TBR.resposta = '$RespQ'";
+    $sql = "SELECT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.tema = '$ContQ' && TBR.resposta = '$RespQ'";
     }
     else
     {
@@ -25,26 +25,26 @@
 
     while($resultado = mysqli_fetch_assoc($result))
     {
-        $_SESSION['pags']=array();
-        $_SESSION['pags'][$n]=array();
-        $_SESSION['pags'][$n]['CodQ'] = $resultado['cod_pergunta'];
-        $_SESSION['pags'][$n]['Enunciado'] = $resultado['enunciado'];
-        $_SESSION['pags'][$n]['Dificuldade'] = $resultado['dificuldade'];
-        $_SESSION['pags'][$n]['Resol'] = $resultado['resolucao'];
-        $_SESSION['RespQ'] = $RespQ;
-        $_SESSION['pags'][$n]['A'] = $resultado['alt_a'];
-        $_SESSION['pags'][$n]['B'] = $resultado['alt_b'];
-        $_SESSION['pags'][$n]['C'] = $resultado['alt_c'];
-        $_SESSION['pags'][$n]['D'] = $resultado['alt_d'];
-        $_SESSION['pags'][$n]['E'] = $resultado['alt_e'];
+        $questaos[$n]['CodQ'] = $resultado['cod_pergunta'];
+        $questaos[$n]['Enunciado'] = $resultado['enunciado'];
+        $questaos[$n]['Dificuldade'] = $resultado['dificuldade'];
+        $questaos[$n]['Resol'] = $resultado['resolucao'];
+        $questaos[$n]['A'] = $resultado['alt_a'];
+        $questaos[$n]['B'] = $resultado['alt_b'];
+        $questaos[$n]['C'] = $resultado['alt_c'];
+        $questaos[$n]['D'] = $resultado['alt_d'];
+        $questaos[$n]['E'] = $resultado['alt_e'];
         $n++;
     }
+
+    $_SESSION['pags'] = $questaos;
 
     //teste do retorno
     if(empty($_SESSION['pags']))
     {//2
         //erro na execução, campo vazio ou dados invalidos
-        unset($_SESSION['busca']);       
+        unset($_SESSION['busca']); 
+        unset($_SESSION['busca2']);       
         echo $_SESSION['auxiliar'] = "Busca com erro";       
         //header("Location: ../../exercicios.php");
     }//2
@@ -52,6 +52,8 @@
     { //3  
         //tudo deu certo 
         $_SESSION['busca'] = "Sucesso";
+        $_SESSION['busca2'] = "Sucesso";
+        $_SESSION['RespQ'] = $RespQ;
         $_SESSION['n'] = $n;
         header("Location: ../../exercicios.php");
     }//3

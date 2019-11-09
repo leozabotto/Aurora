@@ -11,7 +11,7 @@
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
 
-        <script src="BLL/FiltrarQ.js"></script>
+        <script src="BLL/ResponderQ.js"></script>
 		
     </head>
 	
@@ -33,7 +33,8 @@
                 <div id="questao"> <!--Essa div contem a questão e suas respectivas alternativas--> 
                     <div class="row">
                         <div class="col s12">
-                            <form action="" method="">
+                            <form name="responder" action="" method="POST">
+                            <input type="hidden" name ="RespU" id="RespU">
                                 <?php 
                                 //Caso precise limpar tudo
                                 //unset($_SESSION['busca']);
@@ -41,11 +42,11 @@
                                 echo ' 
                                 <p> '. $_SESSION['pags'][$n]['Enunciado'] .' </p>
                                 <div class="collection">
-                                    <a href="A" class="collection-item"><b>A</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['A'] .' </a>
-                                    <a href="B" class="collection-item active green"><b>B</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['B'] .' </a> <!--A alternativa certa aparece como verde -->
-                                    <a href="C" class="collection-item active red"><b>C</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['C'] .' </a> <!-- Caso o usuário responda errado, a alternativa respondida recebe a classe active red-->
-                                    <a href="D" class="collection-item"><b>D</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['D'] .' </a>
-                                    <a href="E" class="collection-item"><b>E</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['E'] .' </a>
+                                    <a  class="collection-item"><b>A</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['A'] .' </a>
+                                    <a  class="collection-item active green"><b>B</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['B'] .' </a> <!--A alternativa certa aparece como verde -->
+                                    <a  class="collection-item active red"><b>C</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['C'] .' </a> <!-- Caso o usuário responda errado, a alternativa respondida recebe a classe active red-->
+                                    <a  class="collection-item"><b>D</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['D'] .' </a>
+                                    <a  class="collection-item"><b>E</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['E'] .' </a>
                                 </div>
                                 <!-- uma vez respondida, as questões não podem mais ser respondidas -->
                                 ';}?>

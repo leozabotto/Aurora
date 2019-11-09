@@ -64,41 +64,35 @@
                     </form>
                     </div>
                 </div>
-
-                <!-- Lista para exibição de exercícios cadastrados -->
-                <div id="lista">
-                    <div class="collection">
-                        <a href="#!" class="collection-item"><b>Exercício 1</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a>
-                        <a href="#!" class="collection-item"><b>Exercício 2</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a> 
-                        <a href="#!" class="collection-item"><b>Exercício 3</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a> 
-                        <a href="#!" class="collection-item"><b>Exercício 4</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a>
-                        <a href="#!" class="collection-item"><b>Exercício 5</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a>
-                    </div>
-                </div> 
-
-                <div id="questao"> <!--Essa div contem a questão e suas respectivas alternativas--> 
-                    <div class="row">
-                        <div class="col s12">
+                        <div id="lista">
                             <div class="collection">
                                 <form name="questao" action="questao.php" method = "POST">
+                                    <input type="hidden" name ="questaoesc" id="questaoesc">
                                     <?php 
-                                    if(isset($_SESSION['busca']))
+                                    if(isset($_SESSION['busca']) && isset($_SESSION['busca2']))
                                     {
                                         $n = 0;
                                         while($n < $_SESSION['n'])
                                         {
+                                            if(strlen($_SESSION['pags'][$n]['Enunciado']) >= 107)
+                                            {
+                                                $Enunciado = substr($_SESSION['pags'][$n]['Enunciado'], 0, 107) . "...";
+                                            }
+                                            else
+                                            {
+                                                $Enunciado = $_SESSION['pags'][$n]['Enunciado'];
+                                            }
                                             echo
                                             '
-                                                <button onclick="AbrirQ('.$n.')" class="collection-item"><b>'. $_SESSION['pags'][$n]['CodQ'] .'</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['Enunciado'].' </a>
-                                                <input type="hidden" name ="questaoesc" id="questaoesc">
+                                                <a onclick="AbrirQ('.$n.')" class="collection-item"><b>Exercício '. $_SESSION['pags'][$n]['CodQ'] .'</b> &nbsp; &nbsp; '. $Enunciado .' </a>
                                             ';
                                             $n++;
                                         }
+                                        unset($_SESSION['busca2']);
                                     }
                                 ?>
                                 </form>
                             </div>
-                        </div>
                     </div>
             </div>
 
