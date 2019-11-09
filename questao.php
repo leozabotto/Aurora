@@ -48,6 +48,9 @@
                                     <a  class="collection-item"><b>D</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['D'] .' </a>
                                     <a  class="collection-item"><b>E</b> &nbsp; &nbsp; '. $_SESSION['pags'][$n]['E'] .' </a>
                                 </div>
+                                <div class="row center-align">
+                                    <a href="#" class="btn waves-effect waves-light orange darken-2"> Responder </a>
+                                </div>
                                 <!-- uma vez respondida, as questões não podem mais ser respondidas -->
                                 ';}?>
                             </form>
@@ -69,24 +72,16 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row center-align">
-
-                    <div class="col s12 m12">
-                        <!--Paginação de acordo com o número de questões-->
-                        <ul class="pagination">
-                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li><!--desabilitado quando estiver na primeira-->
-                            <li class="active"><a href="#quest1">1</a></li>
-                            <li class="waves-effect"><a href="#quest2">2</a></li>
-                            <li class="waves-effect"><a href="#!">3</a></li>
-                            <li class="waves-effect"><a href="#!">4</a></li>
-                            <li class="waves-effect"><a href="#!">5</a></li>
-                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li><!--desabilitado quando estiver na última-->
-                        </ul>
-
-                    </div> 
-                </div>
                 ';}?>
+            </div>
+
+            <!-- Essa div só aparece no momento da análise da questão-->
+            <div id="aprov">
+                <div class="row center-align">
+                    <h6> Aprovar questão? </h6>
+                    <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a>
+                
+                </div> 
             </div>
 
         </main>

@@ -240,7 +240,7 @@
                                         <td> '.$linha['Nome'].'</td>
                                         <td> '.$linha['tema'].'</td>
                                         <td> '.$linha['usernick'].' </td>
-                                        <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                        <td> <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a> </td>
                                         <tr>';
                                 }while($linha = mysqli_fetch_assoc($dados));                       
                         echo '</tbody>
@@ -275,7 +275,7 @@
                                         <td> '.$linha['Nome'].'</td>
                                         <td> '.$linha['tema'].'</td>
                                         <td> '.$linha['usernick'].' </td>
-                                        <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                        <td> <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href=""> X </a> </td>
                                         <tr>';
                                 }while($linha = mysqli_fetch_assoc($dados));                       
                             echo '</tbody>                               
@@ -317,7 +317,7 @@
                                     <td> '.$linha['Nome'].' </td>
                                     <td> '.$linha['email'].'</td>
                                     <td> '.$linha['usernick'].' </td>
-                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                    <td> <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a> </td>
                                     <tr>';
                             }while($linha = mysqli_fetch_assoc($dados));
                            echo' </tbody>
@@ -349,7 +349,7 @@
                                     <td> '.$linha['Nome'].' </td>
                                     <td> '.$linha['email'].'</td>
                                     <td> '.$linha['usernick'].' </td>
-                                    <td> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                    <td> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a> </td>
                                     <tr>';
                             }while($linha = mysqli_fetch_assoc($dados));                       
                             echo '</tbody>
