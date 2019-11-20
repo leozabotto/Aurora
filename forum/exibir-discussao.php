@@ -9,6 +9,8 @@
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
         <link type="text/css" rel="stylesheet" href="css/style.css">
+        <!--Importando JS para edição Personalizado-->
+        <script src="../BLL/EditarForum.js"></script>
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
         <title> Aurora </title>
@@ -34,10 +36,13 @@
                 $resultado = Func_executeupdate_DAL($sql);
             }
             //buscar informaçoes do topico no banco          
-            $sql = "SELECT PF.titulo, PF.pergunta, PF.datap, U.usernick, P.tipo, P.foto FROM TB_Perguntas_forum AS PF, TB_Usuario AS U, TB_Pessoa AS P WHERE U.cod_user = PF.usuario && P.cod_pessoa = U.pessoa && PF.cod_pergunta = '$disc' ";                                        // executa a query
+            $sql = "SELECT PF.titulo, PF.pergunta, PF.cod_pergunta, PF.datap, U.usernick, P.tipo, P.foto FROM TB_Perguntas_forum AS PF, TB_Usuario AS U, TB_Pessoa AS P WHERE U.cod_user = PF.usuario && P.cod_pessoa = U.pessoa && PF.cod_pergunta = '$disc' ";                                        // executa a query
             $dados = mysqli_query($conexao, $sql);
             //transforma os dados em um array
             $linha = mysqli_fetch_assoc($dados);
+
+            $_SESSION['pergunta'] = $linha['pergunta'];
+            $_SESSION['cod_pergunta'] = $linha['cod_pergunta'];
 		?>
 	
 		<main>	
@@ -73,7 +78,7 @@
                                     <div class="row mt-5">
                                         <!-- mostrar as informações de quem fez a pergunta -->
                                         <h5><?php echo $linha['usernick']; ?> </h5>
-                                        <h6><?php echo $linha['datap']; ?> &nbsp </h6> <a href="" class="">Editar</a> | <a href="" class="">Verificar</a> 
+                                        <h6><?php echo $linha['datap']; ?> &nbsp </h6> <a name="btnEdiSelect" id="btnEditar" onClick="HabEdit()" href="">Editar</a>
                                         <h6><?php echo $linha['tipo']; ?>  </h6> <!--Se é aluno ou tutor-->
                                     </div>
                                 </div>
@@ -113,7 +118,7 @@
                                 <div class="col s6">
                                     <div class="row mt-5">
                                         <h5>'.$linha['usernick'].'</h5>
-                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="" class="">Editar</a> | <a href="" class="">Verificar</a> ';
+                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="" class="">Editar</a> | <a href="../DAL/Forum/Class_verificar_DAL.php?id='.$linha['cod_resposta'].'" class="">Verificar</a> ';
                             }
                             else
                             {
@@ -149,21 +154,46 @@
                         
                     }
                 ?>
-                <!-- area para responder o topico -->
+                <!-- Área para responder o topico -->
                 <div class="row">
-                    <form method ="POST" action="../DAL/Forum/Class_resposta_DAL.php?disc=<?php echo $disc;?>">
+                    <form class="hide" id="form_criar" method ="POST" action="../DAL/Forum/Class_resposta_DAL.php?disc=<?php echo $disc;?>">
                         <div class="col s12">
 
-                            <textarea id="#" name="resposta" class="materialize-textarea" placeholder="Digite sua resposta aqui..." rows=20></textarea>
+                            <textarea id="txt_resp" name="resposta" class="materialize-textarea" placeholder="Digite sua resposta aqui..." rows=20></textarea>
+                                                    
+                        </div>
 
-                        </div> 
-                                
                         <div class="col s12 m12">
                             <div class="input-field col s12 m12 center-align">
-                                <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" onclick="">Enviar</button> <!--Botão para Postar--> 
+                                <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" id="btnEnviar">Enviar</button> <!--Botão para Postar--> 
                             </div>
                         </div>   
                     </form> 
+
+                    <!-- Área para editar pergunta -->
+                    <div class="row">
+                    <form method ="POST" id="form_edit" class="">
+                        <div class="col s12">
+                            
+                            <input id="caixa_pergunta" name="perguntaedit" class="materialize-textarea " placeholder="Edite sua pergunta aqui..." rows=20 value="<?php echo $_SESSION['pergunta']?>"></input>
+                        
+                        </div>
+
+                        <div class="col s12 m12">
+                            <div class="input-field col s12 m12 center-align">
+                                <div class="row center-align">
+                                        <div class="col s12 m12">
+
+                                            <a href="../DAL/Forum/Class_editar_DAL.php" class="" id="btnEdit">Editar</a> 
+
+                                            <a id="btnCancelar" class="waves-effect waves-light btn orange darken-2 " onClick ="CanEdit()"> <i class="white-text material-icons"> </i> Cancelar </li> </a>
+                                        
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>   
+                    </form> 
+                        
                 </div>
 
             </div>
