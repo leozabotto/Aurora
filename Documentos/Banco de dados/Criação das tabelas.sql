@@ -76,7 +76,7 @@ FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 CREATE TABLE TB_Respostas_forum 
 (
 cod_resposta int PRIMARY KEY auto_increment,
-resposta varchar(1000) NOT NULL,
+resposta text NOT NULL,
 verificada int NOT NULL,
 datap varchar(30) NOT NULL,
 usuario int,

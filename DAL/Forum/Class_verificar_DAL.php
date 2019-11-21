@@ -24,7 +24,7 @@
         </div>
         
         <div class="modal-footer">
-            <a href="../../home.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            <a href="../../Forum/exibir-discussao.php?disc='.$cod.'" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>';
     }
     else

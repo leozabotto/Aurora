@@ -9,8 +9,6 @@
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
         <link type="text/css" rel="stylesheet" href="css/style.css">
-        <!--Importando JS para edição Personalizado-->
-        <script src="../BLL/EditarForum.js"></script>
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
         <title> Aurora </title>
@@ -78,7 +76,7 @@
                                     <div class="row mt-5">
                                         <!-- mostrar as informações de quem fez a pergunta -->
                                         <h5><?php echo $linha['usernick']; ?> </h5>
-                                        <h6><?php echo $linha['datap']; ?> &nbsp </h6> <button class="btn waves-effect waves-light orange darken-2" name="btnEdiSelect" id="btnEditar" onClick="HabEdit()" href="">Editar</button>
+                                        <h6><?php echo $linha['datap']; ?> &nbsp </h6> <a href="modal-edit.php?idr=nulo&texto=<?php echo$linha['pergunta']?>&idp=<?php echo $disc; ?>" class="modal-trigger">Editar</a>
                                         <h6><?php echo $linha['tipo']; ?>  </h6> <!--Se é aluno ou tutor-->
                                     </div>
                                 </div>
@@ -118,7 +116,7 @@
                                 <div class="col s6">
                                     <div class="row mt-5">
                                         <h5>'.$linha['usernick'].'</h5>
-                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="" class="">Editar</a> | <a href="../DAL/Forum/Class_verificar_DAL.php?id='.$linha['cod_resposta'].'" class="">Verificar</a> ';
+                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="modal-edit.php?idr='.$linha['cod_resposta'].'&texto='.$linha['resposta'].'&idp='.$disc.'" class="modal-trigger">Editar</a> | <a href="../DAL/Forum/Class_verificar_DAL.php?id='.$linha['cod_resposta'].'" class="">Verificar</a> ';
                             }
                             else
                             {
@@ -168,27 +166,22 @@
                                 <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" id="btnEnviar">Enviar</button> <!--Botão para Postar--> 
                             </div>
                         </div>   
-                    </form> 
-
-                    <form class="hide" id="form_edit" method ="POST" action="../DAL/Forum/Class_editar_DAL.php?id=<?php echo $disc;?>">
-                        <div class="col s12">
-
-                            <input id="caixa_pergunta" name="perguntaedit" class="materialize-textarea " placeholder="Edite sua pergunta aqui..." rows=20 value="<?php echo $_SESSION['pergunta']?>"></input>                                                    
-
-                        </div>
-
-                        <div class="col s12 m12">
-                            <div class="input-field col s12 m12 center-align">
-                                <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" id="btnEnviar">Editar</button> <!--Botão para Postar--> 
-                                <button class="btn waves-effect waves-light orange darken-2" id="btnEditar" onClick="CanEdit()">Cancelar</button>
-                            </div>
-                        </div>   
-                    </form>                         
+                    </form>                   
                 </div>
-
             </div>
 				
         </main>
+
+         <!--Vinculando JavaScript no final da página para ganho de performance-->
+         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <script> 
+           
+            M.AutoInit();
+       
+       
+       </script>     
 
 	</body>
 	
