@@ -39,7 +39,9 @@
                             </tr> 
      
                         </thead>    
-                        <tbody>
+                    </table>
+
+                    <div class="collection">
                            
                         <?php
                             //Incluir a conexão com banco de dados
@@ -47,18 +49,39 @@
                             $sql = "SELECT C.cod_conteudo, C.titulo FROM TB_Conteudo AS C, TB_Temas AS T WHERE T.Tema = '$cont' AND C.tema = T.cod_Tema and C.estado = 'Aprovado'";
                             // executa a query
                             $dados = mysqli_query($conexao, $sql);
+
+                            $linha = mysqli_fetch_assoc($dados);
                             // transforma os dados em um array
-                            while ($linha = mysqli_fetch_assoc($dados) ) 
-                            {
-                                //mostra os conteudos adicionados pelos tutores
-                                echo '<tr>
-                                        <tr><td> <a class="" href="exibir.php?cont='.$linha['cod_conteudo'].'"> '.$linha['titulo'].' </a> </td> </tr>                                            
-                                        </tr>';
-                            }                                    
+                            if (empty($linha)){
+                                echo '
+                                <a class="collection-item red-text"> Não há conteúdos de cadastrados no momento. </a>';
+                                unset($sql, $dados, $linha);
+
+                            }
+
+                          
+                            else { 
+
+                                $sql = "SELECT C.cod_conteudo, C.titulo FROM TB_Conteudo AS C, TB_Temas AS T WHERE T.Tema = '$cont' AND C.tema = T.cod_Tema and C.estado = 'Aprovado'";
+                                // executa a query
+                                $dados = mysqli_query($conexao, $sql);
+                                
+                                while ($linha = mysqli_fetch_assoc($dados)) 
+                                {
+                        
+                                    //mostra os conteudos adicionados pelos tutores
+                                    echo '
+                                        <a class="collection-item" href="exibir.php?cont='.$linha['cod_conteudo'].'"> '.$linha['titulo'].' </a>                                            
+                                        ';
+                                }
+                                
+                            }
+                        
+                                             
                         ?>
 
-                        </tbody>
-                    </table>
+                    </div>  
+                   
                     
                 </div>
 

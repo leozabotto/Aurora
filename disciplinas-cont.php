@@ -37,28 +37,33 @@
                         <thead>
                             <tr>
                                 <th class=""> Conteúdos </th>
-                            </tr> 
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
                         
-                        </thead>    
-                        <tbody>
+                <div class="collection">    
+                
+                <?php
+                
+                //Incluir a conexão com banco de dados
+                    $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
+                    $sql = "SELECT T.cod_tema, T.tema FROM TB_Temas AS T, TB_materias AS D WHERE D.Nome = '$disc' AND T.materia = D.cod_materia";
+                    // executa a query
+                    $dados = mysqli_query($conexao, $sql);
+                    // transforma os dados em um array                            
+                    while ($linha = mysqli_fetch_assoc($dados) ) 
+                    {
+                        //mostra os temas dos conteudos
+                        echo '
+                              <a class="collection-item" href="disciplinas-cont-list.php?tema='.$linha['tema'].'"> '.$linha['tema'].' </a>
+                            ';
+                    }
+                                                            
+                ?>                    
 
-                            <?php
-                            //Incluir a conexão com banco de dados
-                            $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
-                            $sql = "SELECT T.cod_tema, T.tema FROM TB_Temas AS T, TB_materias AS D WHERE D.Nome = '$disc' AND T.materia = D.cod_materia";
-                            // executa a query
-                            $dados = mysqli_query($conexao, $sql);
-                            // transforma os dados em um array                            
-                            while ($linha = mysqli_fetch_assoc($dados) ) 
-                            {
-                                //mostra os temas dos conteudos
-                                echo '<tr>
-                                        <tr><td> <a class="" href="disciplinas-cont-list.php?tema='.$linha['tema'].'"> '.$linha['tema'].' </a> </td> </tr>                                            
-                                        </tr>';
-                            }                                    
-                            ?>
-                        </tbody>
-                    </table>   
+                           
+                      
                 </div>
 
                 <div class="row center-align">

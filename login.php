@@ -2,8 +2,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--Importando Ícone da Google Font-->
-         <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
         <!--Importando materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
@@ -16,21 +14,24 @@
 
     </head>
     <body class="grey lighten-4">
+
+        <!-- Iniciando a sessão-->
         <?php
             session_start();
         ?>
 
+        <!-- Conteúdo principal -->
         <main>
-
             <div class="container">
-                <div class="row center-align mt-5">
+                <div class="row center-align mt-2">
                     <div class="col s12 m8 offset-m2">
+                        <!--Card que contém o formulário de login -->
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-title">
                                     <span class="card-title"> 
                                         <div class="row">
-                                            <img class="responsive-img col s2 offset-s5" src="img/AuroraLogo.png"/>
+                                            <a href="index.php"><img class="responsive-img col s2 offset-s5" src="img/AuroraLogo.png"/></a>
                                         </div>
                                             
                                         <h5><strong> Bem-vindo(a)! </strong></h5>
@@ -42,6 +43,7 @@
                                     <div class="row">
                                         <div class="col s12 m12">
                                             <div class="input-field col s12 m8 offset-m2">
+                                                <!--Input de email-->
                                                 <input id="user" type="email"class="validate" name="email">
                                                 <label for="user"> Email </label>
                                                 <span class="helper-text" data-error="Email inválido" data-success=""></span>
@@ -108,12 +110,10 @@
                             </div>
                             <div class="col s12 m12 center-align">
                                 <button class="btn waves-effect waves-light btn orange darken-2" type="button" name="action" onclick="">ENVIAR</button>
+                                &nbsp; <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
                             </div>
                         </form>
                     </div> 
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
                 </div>
             </div>
         </main>

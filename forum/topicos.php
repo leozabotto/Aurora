@@ -51,7 +51,20 @@
                             $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3   
                             $sql = "SELECT PF.cod_pergunta, PF.titulo, PF.visualizacoes FROM TB_Temas AS T, TB_Perguntas_forum AS PF WHERE T.tema = '$cont' AND T.cod_tema = PF.conteudo  AND PF.categoria = '$tipo' ORDER BY titulo ASC";                                        // executa a query
                             $dados = mysqli_query($conexao, $sql);
-                            // transforma os dados em um array
+
+                            $linha = mysqli_fetch_assoc($dados);
+
+                            if (empty($linha)) {
+                                echo '<tr> <p class="red-text"> Não há tópicos cadastrados para essa categoria no momento.';
+                                unset($sql, $dados, $linha);
+                            }
+
+                            else{ 
+                                
+                                $sql = "SELECT PF.cod_pergunta, PF.titulo, PF.visualizacoes FROM TB_Temas AS T, TB_Perguntas_forum AS PF WHERE T.tema = '$cont' AND T.cod_tema = PF.conteudo  AND PF.categoria = '$tipo' ORDER BY titulo ASC";                                        // executa a query
+                                $dados = mysqli_query($conexao, $sql);
+
+                                 // transforma os dados em um array
                             while ($linha = mysqli_fetch_assoc($dados)) 
                             {
                                 $pergunta = $linha["cod_pergunta"];
@@ -71,6 +84,9 @@
                                     </tr>
                                     </tbody>';
                             }
+
+                            }
+                           
                         ?>
 
                                

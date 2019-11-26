@@ -27,7 +27,7 @@
                             <div class="card-title">
                                 <span class="card-title"> 
                                     <div class="row">
-                                        <img class="responsive-img col s2 offset-s5" src="img/AuroraLogo.png"/>
+                                        <a href="index.php"><img class="responsive-img col s2 offset-s5" src="img/AuroraLogo.png"/></a>
                                     </div>
                                             
                                     <h5><strong> Cadastro do Aurora </strong></h5>

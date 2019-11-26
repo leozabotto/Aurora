@@ -30,6 +30,9 @@
                     preventScrolling: false,
                 });
             }); 
+            $(document).ready(function(){
+                $('.modal').modal();
+            });
         </script>
     </head>
     <body>
@@ -68,8 +71,23 @@
                     echo '<li><a href="gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>';
                  }                 
             ?>
+            <li><a href="#contato" class="waves-effect modal-trigger"><i class="material-icons black-text"> help</i>Ajuda</a></li>
             
             <li><a href="sair.php" class="waves-effect waves-light btn red">Sair</a></li>
         </ul>
     </body>
+
+    <div id="contato" class="modal">                     
+        <div class="modal-content">
+            <div class="row center-align">
+                <div class="row">
+                    <img class="responsive-img col s2 offset-s5" src="img/AuroraLogo.png"/>
+                </div>
+                <h4>Contato </h4>
+                <p> Tem alguma dúvida ou precisa de assistência? Envie-nos um email!  </p>
+                <a href="mailto:" class="modal-close"> xxxxx@xxxx.com </a>
+            </div>
+        </div>
+    </div>
+                   
 </html>  
