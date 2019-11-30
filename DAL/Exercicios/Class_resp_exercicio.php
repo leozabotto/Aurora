@@ -1,6 +1,6 @@
 <?php
     //aquivo chamado no action do formulario de login
-    include_once '../../nav_home.php';
+    session_start();
     require_once "../Class_conexao_DAL.php";
 
     $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3

@@ -1,7 +1,7 @@
 <?php
 //Incluir a conexão com banco de dados
 include_once '../Class_conexao_DAL.php';
-include_once '../../nav_home.php';
+session_start();
 
 if(!empty($_FILES['Uimg']['name']))
 {//1
