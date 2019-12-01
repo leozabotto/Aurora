@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="col s12 m12">
                                         <div class="input-field col s12 m12 center-align">
-                                            <button class="btn waves-effect waves-light btn-large orange darken-2" type="button" name="action" onclick="ValidC()">CADASTRAR</button> <!--Botão Cadastrar--> 
+                                            <button class="btn waves-effect waves-light btn-large orange darken-2" type="button" id="btnEnviar" name="action" onclick="ValidC()">CADASTRAR</button> <!--Botão Cadastrar--> 
                                         </div>
                                     </div>
                                 </div> 
@@ -149,6 +149,7 @@
                 $("#user").blur(function(){
                     //Recuperar o valor do campo
                     var pesquisa = $(this).val();
+                    document.getElementById('btnEnviar').disabled = 0;
                     
                     //Verificar se há algo digitado
                     if(pesquisa != ''){
@@ -160,6 +161,7 @@
                             if(retorna != "")
                             {
                                 alert(retorna);
+                                document.getElementById('btnEnviar').disabled = 1;
                             }			
                         });
                     }
@@ -170,6 +172,7 @@
                 $("#email").blur(function(){
                     //Recuperar o valor do campo
                     var pesquisa = $(this).val();
+                    document.getElementById('btnEnviar').disabled = 0;
                     
                     //Verificar se há algo digitado
                     if(pesquisa != ''){
@@ -181,6 +184,7 @@
                             if(retorna != "")
                             {
                                 alert(retorna);
+                                document.getElementById('btnEnviar').disabled = 1;
                             }
                             
                         });

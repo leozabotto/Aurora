@@ -45,6 +45,24 @@
             <a href="../../login.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>';
     }//2
+    elseif($result == "Email inválido")
+    {//3
+         //tudo deu certo, abre modal alertando
+         echo'<div id="modal2" class="modal">                     
+         <div class="modal-content">
+             <div class="row center-align">
+                 <div class="row">
+                     <img class="responsive-img col s2 offset-s5" src="../../img/AuroraLogo.png"/>
+                 </div>
+                 <h4>Cadastro sem sucesso, email já cadastrados </h4>
+             <p> Clique em "Voltar" para tentar novamente </p>
+             </div>
+         </div>
+         
+         <div class="modal-footer">
+             <a href="../../cadastro.php" class="modal-action modal-close waves-effect waves-green btn-flat">Voltar</a>
+         </div>';
+    }//3
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
 ?>
 
@@ -55,6 +73,10 @@
     $(document).ready(function(){
         $('#modal1').modal();
         $('#modal1').modal('open'); 
+    });
+    $(document).ready(function(){
+        $('#modal2').modal();
+        $('#modal2').modal('open'); 
     });
 </script>
 

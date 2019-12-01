@@ -11,7 +11,19 @@
             $sexo =  $objeto['sexo']; 
             $data_nascimento =  $objeto['data_nascimento'];            
             $usernick =  $objeto['usernick']; 
-                                     
+
+            //cria a querry inserir os dados da pessoa
+            $emailV = "SELECT cod_user FROM TB_Usuario WHERE Email = '$email'";
+                    
+            //chama função que vai conectar ao banco e executar a query para encontrar codigo da pessoa
+            $validoE = Func_executeselect_DAL($emailV);//localizada no arquivo ../Class_conexão_DAL, linha 27
+
+            if((!empty($validoE)))
+            {
+                $resultado = "Email inválido";
+            }
+            else
+            {                     
                 //cria a querry inserir os dados da pessoa
                 $sql = "INSERT INTO TB_pessoa (Nome, sexo, Data_de_nascimento, tipo, foto) VALUES ('$nome', '$sexo', '$data_nascimento', 'Aluno', 'usericon.png')";
                 
@@ -60,7 +72,8 @@
                             $resultado ="Usuário cadastrado com sucesso!";
                         }//8
                     }//6
-                }//4                
+                }//4    
+            }            
         }//2      
         else
         {
