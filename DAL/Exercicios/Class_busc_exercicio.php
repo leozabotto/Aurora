@@ -18,7 +18,7 @@
     else
     {
       //chama função que vai buscar os dados no banco
-      $sql = "SELECT DISTINCT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.resposta AS correcao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBC.cod_tema = TBQ.tema AND TBQ.estado = 'Aprovado' AND TBQ.cod_pergunta NOT IN (SELECT pergunta FROM tb_respostas)";
+      $sql = "SELECT DISTINCT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.resposta AS correcao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBC.cod_tema = TBQ.tema AND TBQ.estado = 'Aprovado' AND TBQ.cod_pergunta NOT IN (SELECT pergunta FROM tb_respostas WHERE usuario = '$RespU')";
     }
     $result = mysqli_query($conexao, $sql);
     
